@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BCE3167A265BA8F2007B661B /* DetailNavigableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE31679265BA8F2007B661B /* DetailNavigableView.swift */; };
+		BCE3167A265BA8F2007B661B /* DetailSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE31679265BA8F2007B661B /* DetailSheetView.swift */; };
 		BCEC06082658223300DDBCC4 /* App1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC06072658223300DDBCC4 /* App1App.swift */; };
 		BCEC060A2658223300DDBCC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC06092658223300DDBCC4 /* ContentView.swift */; };
 		BCEC060C2658223600DDBCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEC060B2658223600DDBCC4 /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BCE31679265BA8F2007B661B /* DetailNavigableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailNavigableView.swift; sourceTree = "<group>"; };
+		BCE31679265BA8F2007B661B /* DetailSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailSheetView.swift; sourceTree = "<group>"; };
 		BCEC06042658223300DDBCC4 /* App1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCEC06072658223300DDBCC4 /* App1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App1App.swift; sourceTree = "<group>"; };
 		BCEC06092658223300DDBCC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +59,7 @@
 				BCEC06072658223300DDBCC4 /* App1App.swift */,
 				BCEC060B2658223600DDBCC4 /* Assets.xcassets */,
 				BCEC06092658223300DDBCC4 /* ContentView.swift */,
-				BCE31679265BA8F2007B661B /* DetailNavigableView.swift */,
+				BCE31679265BA8F2007B661B /* DetailSheetView.swift */,
 				BCEC06162658238A00DDBCC4 /* DetailView.swift */,
 				BCEC06102658223600DDBCC4 /* Info.plist */,
 				BCEC060D2658223600DDBCC4 /* Preview Content */,
@@ -147,7 +147,7 @@
 				BCEC06172658238A00DDBCC4 /* DetailView.swift in Sources */,
 				BCEC060A2658223300DDBCC4 /* ContentView.swift in Sources */,
 				BCEC06082658223300DDBCC4 /* App1App.swift in Sources */,
-				BCE3167A265BA8F2007B661B /* DetailNavigableView.swift in Sources */,
+				BCE3167A265BA8F2007B661B /* DetailSheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
