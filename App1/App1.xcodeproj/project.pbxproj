@@ -11,6 +11,7 @@
 		BCEC060A2658223300DDBCC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC06092658223300DDBCC4 /* ContentView.swift */; };
 		BCEC060C2658223600DDBCC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEC060B2658223600DDBCC4 /* Assets.xcassets */; };
 		BCEC060F2658223600DDBCC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEC060E2658223600DDBCC4 /* Preview Assets.xcassets */; };
+		BCEC06172658238A00DDBCC4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEC06162658238A00DDBCC4 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		BCEC060B2658223600DDBCC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCEC060E2658223600DDBCC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCEC06102658223600DDBCC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCEC06162658238A00DDBCC4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +55,9 @@
 			isa = PBXGroup;
 			children = (
 				BCEC06072658223300DDBCC4 /* App1App.swift */,
-				BCEC06092658223300DDBCC4 /* ContentView.swift */,
 				BCEC060B2658223600DDBCC4 /* Assets.xcassets */,
+				BCEC06092658223300DDBCC4 /* ContentView.swift */,
+				BCEC06162658238A00DDBCC4 /* DetailView.swift */,
 				BCEC06102658223600DDBCC4 /* Info.plist */,
 				BCEC060D2658223600DDBCC4 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEC06172658238A00DDBCC4 /* DetailView.swift in Sources */,
 				BCEC060A2658223300DDBCC4 /* ContentView.swift in Sources */,
 				BCEC06082658223300DDBCC4 /* App1App.swift in Sources */,
 			);
