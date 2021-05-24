@@ -13,6 +13,7 @@
 # Build folders
 /build
 /App1/build
+/App2/build
 
 # Xcode workspace folders
 xcuserdata
