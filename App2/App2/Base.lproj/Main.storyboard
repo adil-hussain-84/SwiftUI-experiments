@@ -15,8 +15,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiu-zc-ry6">
+                                <rect key="frame" x="149.5" y="108" width="115" height="30"/>
+                                <state key="normal" title="Push Detail View"/>
+                                <connections>
+                                    <action selector="pushDetailViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfC-WT-dXR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cr-Qu-Ej8">
+                                <rect key="frame" x="140.5" y="146" width="133" height="30"/>
+                                <state key="normal" title="Present Detail View"/>
+                                <connections>
+                                    <action selector="presentDetailViewButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tvr-js-RnU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9cr-Qu-Ej8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2ip-EO-aVP"/>
+                            <constraint firstItem="aiu-zc-ry6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mhb-T2-OCm"/>
+                            <constraint firstItem="aiu-zc-ry6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="vuX-Ca-79B"/>
+                            <constraint firstItem="9cr-Qu-Ej8" firstAttribute="top" secondItem="aiu-zc-ry6" secondAttribute="bottom" constant="8" symbolic="YES" id="wQn-CF-93D"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Thx-Hn-2fQ"/>
                 </viewController>
