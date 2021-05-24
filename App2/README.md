@@ -4,4 +4,4 @@ This UIKit application demonstrates that a SwiftUI view which is presented (moda
 
 This problem is particularly severe in landspace orientation because the modal takes up the full screen and cannot be dismissed by swiping down, as demonstrated below:
 
-![Demo of application](App2Demo.gif)
+<img src="App2Demo.gif" alt="Demo of application" width="30%" height="30% "/>
