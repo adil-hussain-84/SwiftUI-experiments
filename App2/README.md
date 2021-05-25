@@ -6,7 +6,7 @@ This problem is particularly severe in landspace orientation because the modal t
 
 <img src="App2Demo.gif" alt="Demo of application" width="30%" height="30% "/>
 
-##### Useful Links
+##### Links
 
-1. See [here](https://feedbackassistant.apple.com/feedback/9116652) for a discussion in Apple's Feedback Assistant about this problem.
+1. See [here](https://openradar.appspot.com/radar?id=5002685988208640) for an OpenRadar copy of the bug report which I submitted to Apple's Feedback Assistant about this problem.
 2. See [here](https://stackoverflow.com/q/57190511) for a discussion in StackOverflow about this problem.
