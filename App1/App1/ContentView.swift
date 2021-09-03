@@ -15,13 +15,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink("Push Detail View", destination: DetailView())
-                Button("Present Detail View") {
-                    showingSheet.toggle()
-                }
+                Button("Present Detail View") { showingSheet.toggle() }
                 Spacer()
-                .sheet(isPresented: $showingSheet) {
-                    DetailSheetView()
-                }
+                    .sheet(isPresented: $showingSheet) { DetailSheetView() }
             }
             .navigationTitle("Home")
         }

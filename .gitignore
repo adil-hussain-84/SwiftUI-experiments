@@ -14,6 +14,7 @@
 /build
 /App1/build
 /App2/build
+/App3/build
 
 # Xcode workspace folders
 xcuserdata
