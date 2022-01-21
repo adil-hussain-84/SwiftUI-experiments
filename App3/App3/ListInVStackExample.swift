@@ -1,5 +1,5 @@
 //
-//  ListExample.swift
+//  ListInVStackExample.swift
 //  App3
 //
 //  Created by Adil Hussain on 03/09/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListExample: View {
+struct ListInVStackExample: View {
     
     private let numbers: [MyNumber]
     
@@ -16,7 +16,7 @@ struct ListExample: View {
     }
     
     var body: some View {
-        List() {
+        VStack {
             Text("Title")
                 .font(.title)
                 .onAppear { print("onAppear: Title") }
@@ -25,18 +25,18 @@ struct ListExample: View {
                 .font(.title2)
                 .onAppear { print("onAppear: Subtitle") }
                 .onDisappear { print("onDisappear: Subtitle") }
-            ForEach(numbers, id: \.self) { number in
+            List(numbers) { number in
                 MyNumberView(myNumber: number)
                     .onAppear { print("onAppear: \(number.name)") }
                     .onDisappear { print("onDisappear: \(number.name)") }
             }
         }
-        .navigationBarTitle("List Example", displayMode: .inline)
+        .navigationBarTitle("List in VStack Example", displayMode: .inline)
     }
 }
 
-struct ListExample_Previews: PreviewProvider {
+struct ListInVStackExample_Previews: PreviewProvider {
     static var previews: some View {
-        ListExample([MyNumber(name: "One")])
+        ListInVStackExample([MyNumber(name: "One")])
     }
 }

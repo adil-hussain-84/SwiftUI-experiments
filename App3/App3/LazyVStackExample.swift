@@ -1,5 +1,5 @@
 //
-//  LazyVStackExperiment.swift
+//  LazyVStackExample.swift
 //  App3
 //
 //  Created by Adil Hussain on 03/09/2021.
@@ -37,7 +37,7 @@ struct LazyVStackExample: View {
     }
 }
 
-struct LazyVStackExperiment_Previews: PreviewProvider {
+struct LazyVStackExample_Previews: PreviewProvider {
     static var previews: some View {
         LazyVStackExample([MyNumber(name: "One")])
     }

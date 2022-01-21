@@ -26,6 +26,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink("LazyVStack Example", destination: LazyVStackExample(numbers))
+                NavigationLink("List in VStack Example", destination: ListInVStackExample(numbers))
                 NavigationLink("List Example", destination: ListExample(numbers))
                 Spacer()
             }
