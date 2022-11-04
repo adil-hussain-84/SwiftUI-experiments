@@ -16,15 +16,15 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func pushDetailViewButtonTapped(_ sender: Any) {
-        let targetHistoryView = DetailView()
-        let hostingController = UIHostingController(rootView: targetHistoryView)
+        let detailView = DetailView()
+        let hostingController = UIHostingController(rootView: detailView)
         
         navigationController?.pushViewController(hostingController, animated: true)
     }
     
     @IBAction func presentDetailViewButtonTapped(_ sender: Any) {
-        let targetHistoryView = DetailSheetView()
-        let hostingController = UIHostingController(rootView: targetHistoryView)
+        let detailSheetView = DetailSheetView()
+        let hostingController = UIHostingController(rootView: detailSheetView)
         
         present(hostingController, animated: true, completion: nil)
     }
