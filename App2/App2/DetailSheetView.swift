@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DetailSheetView: View {
+    
     var body: some View {
         NavigationView {
             DetailView()
