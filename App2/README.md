@@ -6,9 +6,9 @@ This problem is particularly severe in landspace orientation because the modal t
 
 <img src="App2Demo.gif" alt="Demo of application" width="30%" height="30% "/>
 
-The issue was resolved in iOS 15. So, if you need present a SwiftUI view within a [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller), you're best setting your target's `IPHONEOS_DEPLOYMENT_TARGET` Build Setting to `15.0` or higher.
+The issue was resolved in iOS 15. If you need present a SwiftUI view within a [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller), you're best setting your target's `IPHONEOS_DEPLOYMENT_TARGET` Build Setting to `15.0` or higher.
 
-##### Links
+#### Links
 
 1. See [here](https://openradar.appspot.com/radar?id=5002685988208640) for an OpenRadar copy of the bug report which I submitted to Apple's Feedback Assistant about this problem.
 2. See [here](https://stackoverflow.com/q/57190511) for a discussion in StackOverflow about this problem.
