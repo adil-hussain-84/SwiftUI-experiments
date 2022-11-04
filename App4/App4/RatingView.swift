@@ -17,6 +17,7 @@ struct RatingView: View {
         HStack {
             ForEach(1...5, id: \.self) { number in
                 Image(systemName: getSystemSymbolImageNameForStar(number))
+                    .imageScale(.large)
                     .onTapGesture { rating = number }
             }
         }
