@@ -11,13 +11,40 @@ struct RatingView: View {
     
     @Binding var rating: Int
     
+    private let numberOfStars = 5
+    
     var body: some View {
         HStack {
-            ForEach(1...5, id: \.self) { number in
+            ForEach(1...numberOfStars, id: \.self) { number in
                 Image(systemName: getSystemSymbolImageNameForStar(number))
+                    .accessibilityAddTraits(getAccessibilityTraitsToAddForStar(number))
+                    .accessibilityHint(getAccessibilityHintForStar(number))
+                    .accessibilityIdentifier("StarImage\(number)")
+                    .accessibilityLabel(getAccessibilityLabelForStar(number))
+                    .accessibilityRemoveTraits(.isImage)
                     .imageScale(.large)
                     .onTapGesture { rating = number }
             }
+        }
+    }
+    
+    private func getAccessibilityHintForStar(_ number: Int) -> String {
+        if number != rating {
+            return "Changes the rating"
+        } else {
+            return ""
+        }
+    }
+    
+    private func getAccessibilityLabelForStar(_ number: Int) -> String {
+        return "Star \(number) of \(numberOfStars)"
+    }
+    
+    private func getAccessibilityTraitsToAddForStar(_ number: Int) -> AccessibilityTraits {
+        if (number == rating) {
+            return [.isSelected, .isButton]
+        } else {
+            return [.isButton]
         }
     }
     
