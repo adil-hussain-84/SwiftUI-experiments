@@ -9,9 +9,13 @@ import SwiftUI
 
 struct RatingView: View {
     
-    @Binding var rating: Int
-    
     private let numberOfStars = 5
+    
+    @Binding private var rating: Int
+    
+    init(rating: Binding<Int>) {
+        self._rating = rating
+    }
     
     var body: some View {
         HStack {
