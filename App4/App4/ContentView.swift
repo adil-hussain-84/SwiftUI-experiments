@@ -16,8 +16,10 @@ struct ContentView: View {
             Text("Enter your rating")
                 .font(.headline)
             RatingView(rating: $rating)
+                .accessibilityIdentifier("RatingView")
                 .padding([.top, .bottom])
             Text(String("Your rating is \(rating)"))
+                .accessibilityIdentifier("RatingText")
                 .font(.body)
         }
     }

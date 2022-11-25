@@ -23,13 +23,13 @@ struct RatingView: View {
                 Image(systemName: getSystemSymbolImageNameForStar(number))
                     .accessibilityAddTraits(getAccessibilityTraitsToAddForStar(number))
                     .accessibilityHint(getAccessibilityHintForStar(number))
-                    .accessibilityIdentifier("StarImage\(number)")
+                    .accessibilityIdentifier("StarButton\(number)")
                     .accessibilityLabel(getAccessibilityLabelForStar(number))
                     .accessibilityRemoveTraits(.isImage)
                     .imageScale(.large)
                     .onTapGesture { rating = number }
             }
-        }
+        }.accessibilityElement(children: .contain)
     }
     
     private func getAccessibilityHintForStar(_ number: Int) -> String {
