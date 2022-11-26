@@ -19,7 +19,6 @@ struct ContentView: View {
             DatePicker("Date Selected", selection: $selectedDate, displayedComponents: [.date])
                 .accessibilityIdentifier("DatePicker")
                 .datePickerStyle(.compact)
-                .accessibilityElement(children: .contain)
             Spacer()
         }
         .padding()
