@@ -20,7 +20,7 @@ final class App5UITests: XCTestCase {
     // This test assumes that the device's Region is set to "United States"
     func test_date_picker() {
         // 1. Launch the app with an argument that fakes the current date in the app
-        let date = Date.from(year: 2022, month: 1, day: 15, hour: 12, minute: 0)
+        let date = Date.from(year: 2022, month: 11, day: 26, hour: 12, minute: 0)
         
         application.launchEnvironment["FakeDate"] = ISO8601DateFormatter().string(from: date)
         application.launch()
@@ -35,10 +35,9 @@ final class App5UITests: XCTestCase {
         XCTAssertFalse(application.staticTexts["TitleText"].isHittable)
         
         // 5. Change the selected date
-        application.datePickers.collectionViews.buttons["Friday, January 14"].tap()
+        application.datePickers.collectionViews.buttons["Friday, November 25"].tap()
         
         // 6. Dismiss the DatePicker popup
-        XCTAssertFalse(application.datePickers["DatePicker"].isHittable)
         application.datePickers["DatePicker"].tap()
         
         // 7. Assert that the title text is at the foreground again
