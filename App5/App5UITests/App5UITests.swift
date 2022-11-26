@@ -7,13 +7,14 @@
 
 import XCTest
 
-class App5UITests: XCTestCase {
+final class App5UITests: XCTestCase {
     
-    var application: XCUIApplication!
+    private var application: XCUIApplication!
     
     override func setUpWithError() throws {
-        application = XCUIApplication()
+        try super.setUpWithError()
         continueAfterFailure = false
+        application = XCUIApplication()
     }
     
     // This test assumes that the device's Region is set to "United States"
@@ -25,22 +26,23 @@ class App5UITests: XCTestCase {
         application.launch()
         
         // 2. Assert that the title text is at the foreground
-        XCTAssertTrue(application.staticTexts["ContentViewTitleText"].isHittable)
+        XCTAssertTrue(application.staticTexts["TitleText"].isHittable)
         
         // 3. Show the DatePicker popup
         application.datePickers["DatePicker"].tap()
         
         // 4. Assert that the title text is no longer at the foreground
-        XCTAssertFalse(application.staticTexts["ContentViewTitleText"].isHittable)
+        XCTAssertFalse(application.staticTexts["TitleText"].isHittable)
         
         // 5. Change the selected date
         application.datePickers.collectionViews.buttons["Friday, January 14"].tap()
         
         // 6. Dismiss the DatePicker popup
+        XCTAssertFalse(application.datePickers["DatePicker"].isHittable)
         application.datePickers["DatePicker"].tap()
         
         // 7. Assert that the title text is at the foreground again
-        XCTAssertTrue(application.staticTexts["ContentViewTitleText"].isHittable)
+        XCTAssertTrue(application.staticTexts["TitleText"].isHittable)
         
         // 8. Assert that the text displayed in the DatePicker corresponds to the selected date
         // TODO

@@ -13,12 +13,13 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Content View")
+            Text("Select a date")
                 .font(.title)
-                .accessibilityIdentifier("ContentViewTitleText")
+                .accessibilityIdentifier("TitleText")
             DatePicker("Date Selected", selection: $selectedDate, displayedComponents: [.date])
                 .accessibilityIdentifier("DatePicker")
                 .datePickerStyle(.compact)
+                .accessibilityElement(children: .contain)
             Spacer()
         }
         .padding()
