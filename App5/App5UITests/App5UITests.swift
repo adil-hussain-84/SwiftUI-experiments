@@ -38,7 +38,7 @@ final class App5UITests: XCTestCase {
         application.datePickers.collectionViews.buttons["Friday, November 25"].tap()
         
         // 6. Dismiss the DatePicker popup
-        application.datePickers["DatePicker"].tap()
+        application.datePickers["DatePicker"].forceTap()
         
         // 7. Assert that the title text is at the foreground again
         XCTAssertTrue(application.staticTexts["TitleText"].isHittable)
@@ -60,6 +60,17 @@ final class App5UITests: XCTestCase {
     }
 }
 
+extension XCUIElement {
+    func forceTap() {
+        if (isHittable) {
+            tap()
+        } else {
+            let coordinate = coordinate(withNormalizedOffset: CGVector(dx:0.0, dy:0.0))
+            coordinate.tap()
+        }
+    }
+}
+
 extension Date {
     
     static func from(year: Int,
@@ -67,7 +78,7 @@ extension Date {
                      day: Int,
                      hour: Int,
                      minute: Int) -> Date {
-
+        
         let dateComponents = DateComponents(
             year: year,
             month: month,
