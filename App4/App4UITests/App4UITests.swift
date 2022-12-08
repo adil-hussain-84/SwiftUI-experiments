@@ -33,7 +33,7 @@ final class App4UITests: XCTestCase {
         XCTAssertEqual("Your rating is 3", application.staticTexts["RatingText"].label)
     }
     
-    func test_state_of_views_when_rating_changed() throws {
+    func test_state_of_views_when_rating_is_changed() throws {
         // Given.
         application.launch()
         
@@ -41,7 +41,6 @@ final class App4UITests: XCTestCase {
         application.buttons["StarButton4"].tap()
         
         // Then.
-        
         XCTAssertFalse(application.buttons["StarButton1"].isSelected)
         XCTAssertFalse(application.buttons["StarButton2"].isSelected)
         XCTAssertFalse(application.buttons["StarButton3"].isSelected)
