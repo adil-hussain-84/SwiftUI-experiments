@@ -26,6 +26,7 @@ struct RatingView: View {
                     .accessibilityIdentifier("StarButton\(number)")
                     .accessibilityLabel(getAccessibilityLabelForStar(number))
                     .accessibilityRemoveTraits(.isImage)
+                    .foregroundColor(.accentColor)
                     .imageScale(.large)
                     .onTapGesture { rating = number }
             }
