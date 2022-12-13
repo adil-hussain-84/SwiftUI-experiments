@@ -14,6 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Enter your rating")
+                .accessibilityAddTraits(.isHeader)
                 .font(.headline)
             RatingView(rating: $rating)
                 .accessibilityIdentifier("RatingView")
