@@ -20,7 +20,7 @@ struct RatingView: View {
     var body: some View {
         HStack {
             ForEach(1...numberOfStars, id: \.self) { number in
-                Image(systemName: getSystemSymbolImageNameForStar(number))
+                Image(systemName: getImageNameForStar(number))
                     .accessibilityAddTraits(getAccessibilityTraitsToAddForStar(number))
                     .accessibilityHint(getAccessibilityHintForStar(number))
                     .accessibilityIdentifier("StarButton\(number)")
@@ -53,7 +53,7 @@ struct RatingView: View {
         }
     }
     
-    private func getSystemSymbolImageNameForStar(_ number: Int) -> String {
+    private func getImageNameForStar(_ number: Int) -> String {
         if (number <= rating) {
             return "star.fill"
         } else {
