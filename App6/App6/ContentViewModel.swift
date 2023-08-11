@@ -32,29 +32,49 @@ import Foundation
         }
     }
     
-    nonisolated func executeOperation() {
-        print("Before 'Task' instantiation")
+    nonisolated func executeOperation1() {
+        print("Before 'Task' instantiation for Operation 1.")
         
         Task(priority: .userInitiated) {
             if (await !changeStateTo(.busy)) {
-                print("Abandoning Task. The view model is busy.")
+                print("Abandoned Operation 1 before starting. The view model is busy.")
                 return
             }
             
-            print("Starting Task")
+            print("Starting Operation 1.")
             do {
                 try await Task.sleep(for: .seconds(3))
             } catch {
-                print("The 'Task.sleep' call threw an error 🤷‍♂️")
+                print("The 'Task.sleep' call in Operation 1 threw an error 🤷‍♂️")
             }
-            print("Ending Task")
+            print("Completed Operation 1.")
             
             if (await !changeStateTo(.free)) {
-                print("Strange! Couldn't change the state back to free.")
+                print("Strange! Couldn't change the state back to free after ending Operation 1.")
                 return
             }
         }
         
-        print("After 'Task' instantiation")
+        print("After 'Task' instantiation for Operation 1.")
+    }
+    
+    func executeOperation2() async {
+        if (await !changeStateTo(.busy)) {
+            print("Abandoned Operation 2 before starting. The view model is busy.")
+            return
+        }
+        
+        print("Starting Operation 2.")
+        do {
+            try await Task.sleep(for: .seconds(3))
+        } catch {
+            print("The 'Task.sleep' call in Operation 2 threw an error 🤷‍♂️")
+        }
+        print("Completed Operation 2.")
+        
+        if (await !changeStateTo(.free)) {
+            print("Strange! Couldn't change the state back to free after ending Operation 2.")
+            return
+        }
     }
 }

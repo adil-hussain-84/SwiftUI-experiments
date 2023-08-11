@@ -15,8 +15,18 @@ struct ContentView: View {
         VStack(spacing: 10) {
             Text(viewModel.stateLabel())
             
-            Button("Execute Operation") {
-                viewModel.executeOperation()
+            Button("Execute Operation 1") {
+                viewModel.executeOperation1()
+            }
+            
+            Button("Execute Operation 2") {
+                print("Before 'Task' instantiation for Operation 2.")
+                
+                Task {
+                    await viewModel.executeOperation2()
+                }
+                
+                print("After 'Task' instantiation for Operation 2.")
             }
         }
         .padding()
