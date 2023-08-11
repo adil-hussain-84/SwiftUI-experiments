@@ -8,7 +8,7 @@ In the first technique, the view model's function is declared as `nonisolated` a
 
 In the second technique, the view model's function is declared as `async` and it's the Button's action which must instantiate the [Task][3] that carries out the asynchronous work.
 
-Refer to the Buttons in the [ContentView.swift][4] file for the entry point of the two different techniques. 
+Refer to the Buttons in the [ContentView][4] struct for the entry point of the two different techniques. 
 
 [1]: https://developer.apple.com/documentation/swiftui/button
 [2]: https://developer.apple.com/documentation/swift/mainactor
