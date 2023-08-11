@@ -22,7 +22,7 @@ struct ContentView: View {
             Button("Execute Operation 2") {
                 print("Before 'Task' instantiation for Operation 2.")
                 
-                Task {
+                Task(priority: .userInitiated) {
                     await viewModel.executeOperation2()
                 }
                 
