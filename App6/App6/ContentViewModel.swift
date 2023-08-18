@@ -23,7 +23,7 @@ import Foundation
         }
     }
     
-    func changeStateTo(_ newState: State) async -> Bool {
+    func changeStateTo(_ newState: State) -> Bool {
         if (state != newState) {
             state = newState
             return true
@@ -59,7 +59,7 @@ import Foundation
     }
     
     func executeOperation2() async {
-        if (await !changeStateTo(.busy)) {
+        if (!changeStateTo(.busy)) {
             print("Abandoned Operation 2 before starting. The view model is busy.")
             return
         }
@@ -72,7 +72,7 @@ import Foundation
         }
         print("Completed Operation 2.")
         
-        if (await !changeStateTo(.free)) {
+        if (!changeStateTo(.free)) {
             print("Strange! Couldn't change the state back to free after ending Operation 2.")
             return
         }
