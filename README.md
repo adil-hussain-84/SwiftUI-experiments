@@ -9,4 +9,4 @@ The applications in this project are as follows:
 * [App3](App3) – A SwiftUI application which demonstrates how to display an array of items with `List` and `LazyVStack`.
 * [App4](App4) – A SwiftUI application which demonstrates a custom rating view.
 * [App5](App5) – A SwiftUI application which demonstrates how to write a UI test which interacts with a `DatePicker`.
-* [App6](App6) - A SwiftUI application which demonstrates two different techniques for scheduling asynchronous work when a button is tapped.
+* [App6](App6) - A SwiftUI application which demonstrates how to schedule asynchronous work when a `Button` is tapped.
