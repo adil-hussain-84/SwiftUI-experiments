@@ -16,17 +16,19 @@ struct ContentView: View {
             Text(viewModel.stateLabel())
             
             Button("Execute Operation 1") {
-                viewModel.executeOperation1()
+                Task(priority: .userInitiated) {
+                    await viewModel.executeIsolatedAsyncOperation()
+                }
             }
             
             Button("Execute Operation 2") {
-                print("Before 'Task' instantiation for Operation 2.")
-                
                 Task(priority: .userInitiated) {
-                    await viewModel.executeOperation2()
+                    await viewModel.executeNonisolatedAsyncOperation()
                 }
-                
-                print("After 'Task' instantiation for Operation 2.")
+            }
+            
+            Button("Execute Operation 3") {
+                viewModel.executeIsolatedSynchronousOperation()
             }
         }
         .padding()

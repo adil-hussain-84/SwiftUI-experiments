@@ -9,12 +9,7 @@ import Foundation
 
 @MainActor class ContentViewModel: ObservableObject {
     
-    @Published var state = State.free
-    
-    enum State {
-        case free
-        case busy
-    }
+    @Published private var state = State.free
     
     func stateLabel() -> String {
         switch state {
@@ -23,7 +18,64 @@ import Foundation
         }
     }
     
-    func changeStateTo(_ newState: State) -> Bool {
+    /// This function is declared as `async` because it makes a call that requires an `await`.
+    /// It makes no longstanding blocking calls so it doesn't need to be declared as `nonisolated`.
+    func executeIsolatedAsyncOperation() async {
+        if (!changeStateTo(.busy)) {
+            print("Op 1 ==> Abandoned before starting; The view model is busy <== Op 1")
+            return
+        }
+        
+        print("Op 1 ==> Starting <== Op 1")
+        do {
+            try await Task.sleep(for: .seconds(3))
+        } catch {
+            print("Op 1 ==> The 'Task.sleep' call threw an error <== Op 1")
+        }
+        print("Op 1 ==> Completed <== Op 1")
+        
+        if (!changeStateTo(.free)) {
+            print("Op 1 ==> Strange! Couldn't change the state back to free after completion <== Op 1")
+            return
+        }
+    }
+    
+    /// This function is declared as `nonisolated` and `async` because
+    /// it makes a longstanding blocking call (i.e. the `sleep` call) and it makes calls that requires an `await`.
+    nonisolated func executeNonisolatedAsyncOperation() async {
+        if await (!changeStateTo(.busy)) {
+            print("Op 2 ==> Abandoned before starting; The view model is busy <== Op 2")
+            return
+        }
+        
+        print("Op 2 ==> Starting <== Op 2")
+        sleep(3) // this call blocks the underlying thread
+        print("Op 2 ==> Completed <== Op 2")
+        
+        if await (!changeStateTo(.free)) {
+            print("Op 2 ==> Strange! Couldn't change the state back to free after completion <== Op 2")
+            return
+        }
+    }
+    
+    /// This function is declared without the `async` and `nonisolated` keywords because
+    /// it makes no calls that require an `await` and it makes no longstanding blocking calls.
+    func executeIsolatedSynchronousOperation() {
+        if (!changeStateTo(.busy)) {
+            print("Op 3 ==> Abandoned before starting; The view model is busy <== Op 3")
+            return
+        }
+        
+        print("Op 3 ==> Starting <== Op 3")
+        print("Op 3 ==> Completed <== Op 3")
+        
+        if (!changeStateTo(.free)) {
+            print("Op 3 ==> Strange! Couldn't change the state back to free after completion <== Op 3")
+            return
+        }
+    }
+    
+    private func changeStateTo(_ newState: State) -> Bool {
         if (state != newState) {
             state = newState
             return true
@@ -32,49 +84,8 @@ import Foundation
         }
     }
     
-    nonisolated func executeOperation1() {
-        print("Before 'Task' instantiation for Operation 1.")
-        
-        Task(priority: .userInitiated) {
-            if (await !changeStateTo(.busy)) {
-                print("Abandoned Operation 1 before starting. The view model is busy.")
-                return
-            }
-            
-            print("Starting Operation 1.")
-            do {
-                try await Task.sleep(for: .seconds(3))
-            } catch {
-                print("The 'Task.sleep' call in Operation 1 threw an error 🤷‍♂️")
-            }
-            print("Completed Operation 1.")
-            
-            if (await !changeStateTo(.free)) {
-                print("Strange! Couldn't change the state back to free after ending Operation 1.")
-                return
-            }
-        }
-        
-        print("After 'Task' instantiation for Operation 1.")
-    }
-    
-    func executeOperation2() async {
-        if (!changeStateTo(.busy)) {
-            print("Abandoned Operation 2 before starting. The view model is busy.")
-            return
-        }
-        
-        print("Starting Operation 2.")
-        do {
-            try await Task.sleep(for: .seconds(3))
-        } catch {
-            print("The 'Task.sleep' call in Operation 2 threw an error 🤷‍♂️")
-        }
-        print("Completed Operation 2.")
-        
-        if (!changeStateTo(.free)) {
-            print("Strange! Couldn't change the state back to free after ending Operation 2.")
-            return
-        }
+    private enum State {
+        case free
+        case busy
     }
 }
