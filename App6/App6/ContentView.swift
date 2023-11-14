@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var viewModel = ContentViewModel()
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
         VStack(spacing: 10) {
