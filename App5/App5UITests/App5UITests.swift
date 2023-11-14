@@ -35,7 +35,7 @@ final class App5UITests: XCTestCase {
         XCTAssertFalse(application.staticTexts["TitleText"].isHittable)
         
         // 5. Change the selected date
-        application.datePickers.collectionViews.buttons["Friday, November 25"].tap()
+        application.datePickers.collectionViews.buttons["Friday, 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
         application.datePickers["DatePicker"].forceTap()
