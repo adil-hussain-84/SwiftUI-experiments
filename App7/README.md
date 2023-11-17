@@ -1,10 +1,8 @@
 # StateObject initialisation example
 
-## About
-
 This SwiftUI application demonstrates how to initialise an [ObservableObject][1] as a [StateObject][2] in a View's `init` method.
 
-Let's say you have declared an [ObservableObject][1] named `ContentViewModel` in your View as follows:
+Let's say you have an [ObservableObject][1] named `ContentViewModel` and you have declared it as a `StateObject` in your View, as follows:
 
 ```swift
 struct ContentView: View {
