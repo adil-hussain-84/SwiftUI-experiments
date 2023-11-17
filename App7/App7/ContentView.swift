@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var viewModel: ContentViewModel
+    @StateObject var viewModel: ContentViewModel
     
     init(name: String) {
-        viewModel = ContentViewModel(name: name)
+        _viewModel = StateObject(wrappedValue: ContentViewModel(name: name))
     }
     
     var body: some View {
