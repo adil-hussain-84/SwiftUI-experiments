@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject var viewModel: ContentViewModel
+    @StateObject private var viewModel: ContentViewModel
     
     init(name: String) {
         _viewModel = StateObject(wrappedValue: ContentViewModel(name: name))
