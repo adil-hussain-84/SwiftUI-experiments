@@ -15,21 +15,35 @@ struct ContentView: View {
         VStack(spacing: 10) {
             Text(viewModel.stateLabel())
             
-            Button("Execute Operation 1") {
+            Divider()
+            
+            Button("Execute Actor-Isolated\nAsynchronous Operation") {
                 Task(priority: .userInitiated) {
-                    await viewModel.executeIsolatedAsyncOperation()
+                    await viewModel.executeActorIsolatedAsyncOperation()
                 }
             }
             
-            Button("Execute Operation 2") {
+            Divider()
+            
+            Button("Execute Nonisolated\nAsynchronous Operation") {
                 Task(priority: .userInitiated) {
                     await viewModel.executeNonisolatedAsyncOperation()
                 }
             }
             
-            Button("Execute Operation 3") {
-                viewModel.executeIsolatedSynchronousOperation()
+            Divider()
+            
+            Button("Execute Actor-Isolated\nSynchronous Operation") {
+                viewModel.executeActorIsolatedSynchronousOperation()
             }
+            
+            Divider()
+            
+            Button("Execute Nonisolated\nSynchronous Operation") {
+                viewModel.executeNonisolatedSynchronousOperation()
+            }
+            
+            Divider()
         }
         .padding()
     }
