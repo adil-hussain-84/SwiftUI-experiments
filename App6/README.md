@@ -2,9 +2,9 @@
 
 ## About
 
-This SwiftUI application demonstrates how to schedule asynchronous work when a [Button][1] is tapped.
+This SwiftUI application demonstrates how to schedule synchronous and asynchronous work when a [Button][1] is tapped.
 
-Refer to the three Buttons in the [ContentView][4] struct. Each Button calls into a function of a [MainActor][2] view model via a [Task][3]. Each of the functions in the view model is declared as `nonisolated` or `async` or both.
+Refer to the four Buttons in the [ContentView][4] struct. Each Button calls into a function of a [MainActor][2] view model either directly or via a [Task][3]. Each of the functions in the view model is declared as `nonisolated` or `async` or both.
 
 ## Further reading
 
