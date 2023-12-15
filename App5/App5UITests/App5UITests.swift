@@ -28,7 +28,7 @@ final class App5UITests: XCTestCase {
         let titleText = application.staticTexts["TitleText"]
         let datePicker = application.datePickers["DatePicker"]
         let datePickerButton = datePicker.buttons["Date Picker"]
-        let datePickerPopupCollectionView = application.datePickers.collectionViews
+        let datePickerCollectionViewsQuery = application.datePickers.collectionViews
         
         // 2. Assert that the title text is at the foreground
         XCTAssertTrue(titleText.isHittable)
@@ -40,7 +40,7 @@ final class App5UITests: XCTestCase {
         XCTAssertFalse(titleText.isHittable)
         
         // 5. Change the selected date
-        datePickerPopupCollectionView.buttons["Friday, 25 November"].tap()
+        datePickerCollectionViewsQuery.buttons["Friday, 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
         datePicker.forceTap()
