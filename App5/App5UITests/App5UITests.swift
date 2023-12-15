@@ -25,26 +25,31 @@ final class App5UITests: XCTestCase {
         application.launchEnvironment["FakeDate"] = ISO8601DateFormatter().string(from: date)
         application.launch()
         
+        let titleText = application.staticTexts["TitleText"]
+        let datePicker = application.datePickers["DatePicker"]
+        let datePickerButton = datePicker.buttons["Date Picker"]
+        let datePickerPopupCollectionView = application.datePickers.collectionViews
+        
         // 2. Assert that the title text is at the foreground
-        XCTAssertTrue(application.staticTexts["TitleText"].isHittable)
+        XCTAssertTrue(titleText.isHittable)
         
         // 3. Show the DatePicker popup
-        application.datePickers["DatePicker"].tap()
+        datePicker.tap()
         
         // 4. Assert that the title text is no longer at the foreground
-        XCTAssertFalse(application.staticTexts["TitleText"].isHittable)
+        XCTAssertFalse(titleText.isHittable)
         
         // 5. Change the selected date
-        application.datePickers.collectionViews.buttons["Friday, 25 November"].tap()
+        datePickerPopupCollectionView.buttons["Friday, 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
-        application.datePickers["DatePicker"].forceTap()
+        datePicker.forceTap()
         
         // 7. Assert that the title text is at the foreground again
-        XCTAssertTrue(application.staticTexts["TitleText"].isHittable)
+        XCTAssertTrue(titleText.isHittable)
         
         // 8. Assert that the text displayed in the DatePicker corresponds to the selected date
-        // TODO
+        XCTAssertEqual(datePickerButton.value as? String, "25 Nov 2022")
     }
     
     func test_tapping_date_picker_with_ui_test_recorder() {
