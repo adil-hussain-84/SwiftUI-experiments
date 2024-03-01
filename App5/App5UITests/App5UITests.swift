@@ -17,8 +17,11 @@ final class App5UITests: XCTestCase {
         application = XCUIApplication()
     }
     
-    // This test assumes that the device's Region is set to "United States"
-    func test_date_picker() {
+    /// This test function taps on a ``DatePicker`` to reveal the calendar-style popup,
+    /// chooses a date in the popup and then dismisses the popup by force tapping on the ``DatePicker``.
+    ///
+    /// This test assumes that the device's Region is set to "United States".
+    func test_date_picker_1() {
         // 1. Launch the app with an argument that fakes the current date in the app
         let date = Date.from(year: 2022, month: 11, day: 26, hour: 12, minute: 0)
         
@@ -52,15 +55,53 @@ final class App5UITests: XCTestCase {
         XCTAssertEqual(datePickerButton.value as? String, "25 Nov 2022")
     }
     
-    func test_tapping_date_picker_with_ui_test_recorder() {
+    /// This test function taps on a ``DatePicker`` to reveal the calendar-style popup,
+    /// chooses a date in the popup and then dismisses the popup by tapping on the `"PopoverDismissRegion"` button.
+    ///
+    /// This test assumes that the device's Region is set to "United States".
+    func test_date_picker_2() {
+        // 1. Launch the app with an argument that fakes the current date in the app
+        let date = Date.from(year: 2022, month: 11, day: 26, hour: 12, minute: 0)
+        
+        application.launchEnvironment["FakeDate"] = ISO8601DateFormatter().string(from: date)
         application.launch()
         
-        // 1. Tap the "Record UI Test" button in Xcode
-        // 2. Tap the DatePicker on the device (simulator or real device) to reveal the DatePicker popup
-        // 3. Marvel at one of the following two error messages which Xcode will pop up instead:
-        // 3a. "Timestamp Event Matching Error: Failed to find matching element"
-        // 3b. "Lost recording connection with device"
+        let titleText = application.staticTexts["TitleText"]
+        let datePicker = application.datePickers["DatePicker"]
+        let datePickerButton = datePicker.buttons["Date Picker"]
+        let datePickerCollectionViewsQuery = application.datePickers.collectionViews
         
+        // 2. Assert that the title text is at the foreground
+        XCTAssertTrue(titleText.isHittable)
+        
+        // 3. Show the DatePicker popup
+        datePicker.tap()
+        
+        // 4. Assert that the title text is no longer at the foreground
+        XCTAssertFalse(titleText.isHittable)
+        
+        // 5. Change the selected date
+        datePickerCollectionViewsQuery.buttons["Friday, 25 November"].tap()
+        
+        // 6. Dismiss the DatePicker popup
+        application.buttons["PopoverDismissRegion"].tap()
+        
+        // 7. Assert that the title text is at the foreground again
+        XCTAssertTrue(titleText.isHittable)
+        
+        // 8. Assert that the text displayed in the DatePicker corresponds to the selected date
+        XCTAssertEqual(datePickerButton.value as? String, "25 Nov 2022")
+    }
+    
+    /// This test function demonstrates that the Xcode UI Test Recorder falls over itself when a ``DatePicker`` is tapped.
+    func test_tapping_date_picker_with_ui_test_recorder() {
+        
+        // 1. Place the cursor in this test function
+        // 2. Tap the "Record UI Test" button in Xcode
+        // 3. Tap the DatePicker on the device (simulator or real device) to reveal the DatePicker popup
+        // 4. Marvel at one of the following two error messages which Xcode will pop up instead:
+        // 4a. "Timestamp Event Matching Error: Failed to find matching element"
+        // 4b. "Lost recording connection with device"
         
     }
 }
