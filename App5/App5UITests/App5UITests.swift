@@ -70,6 +70,7 @@ final class App5UITests: XCTestCase {
         let datePicker = application.datePickers["DatePicker"]
         let datePickerButton = datePicker.buttons["Date Picker"]
         let datePickerCollectionViewsQuery = application.datePickers.collectionViews
+        let popoverDismissRegion = application.buttons["PopoverDismissRegion"]
         
         // 2. Assert that the title text is at the foreground
         XCTAssertTrue(titleText.isHittable)
@@ -84,7 +85,7 @@ final class App5UITests: XCTestCase {
         datePickerCollectionViewsQuery.buttons["Friday, 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
-        application.buttons["PopoverDismissRegion"].tap()
+        popoverDismissRegion.tap()
         
         // 7. Assert that the title text is at the foreground again
         XCTAssertTrue(titleText.isHittable)
