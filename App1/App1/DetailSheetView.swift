@@ -15,8 +15,6 @@ struct DetailSheetView: View {
     }
 }
 
-struct DetailSheetView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailSheetView()
-    }
+#Preview {
+    DetailSheetView()
 }

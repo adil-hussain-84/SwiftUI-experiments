@@ -37,8 +37,6 @@ struct LazyVStackExample: View {
     }
 }
 
-struct LazyVStackExample_Previews: PreviewProvider {
-    static var previews: some View {
-        LazyVStackExample([MyNumber(name: "One")])
-    }
+#Preview {
+    LazyVStackExample([MyNumber(name: "One")])
 }

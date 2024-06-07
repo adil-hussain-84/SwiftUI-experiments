@@ -18,8 +18,6 @@ struct MyNumberView: View {
     }
 }
 
-struct MyNumberView_Previews: PreviewProvider {
-    static var previews: some View {
-        MyNumberView(myNumber: MyNumber(name: "One"))
-    }
+#Preview {
+    MyNumberView(myNumber: MyNumber(name: "One"))
 }

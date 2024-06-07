@@ -22,8 +22,6 @@ struct DetailView: View {
     }
 }
 
-struct ModalView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView()
-    }
+#Preview {
+    DetailView()
 }

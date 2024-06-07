@@ -35,8 +35,6 @@ struct ListInVStackExample: View {
     }
 }
 
-struct ListInVStackExample_Previews: PreviewProvider {
-    static var previews: some View {
-        ListInVStackExample([MyNumber(name: "One")])
-    }
+#Preview {
+    ListInVStackExample([MyNumber(name: "One")])
 }
