@@ -9,30 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private let numbers = (1...10).map { MyNumber($0) }
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 8) {
                 NavigationLink(
                     "Show list with default list style",
-                    destination: ListExample(listStyle: DefaultListStyle(), numbers: numbers)
+                    destination: ListExample(listStyle: DefaultListStyle())
                 )
                 NavigationLink(
                     "Show list with plain list style",
-                    destination: ListExample(listStyle: PlainListStyle(), numbers: numbers)
+                    destination: ListExample(listStyle: PlainListStyle())
                 )
                 NavigationLink(
                     "Show list with inset list style",
-                    destination: ListExample(listStyle: InsetListStyle(), numbers: numbers)
+                    destination: ListExample(listStyle: InsetListStyle())
                 )
                 NavigationLink(
                     "Show list with grouped list style",
-                    destination: ListExample(listStyle: GroupedListStyle(), numbers: numbers)
+                    destination: ListExample(listStyle: GroupedListStyle())
                 )
                 NavigationLink(
                     "Show list with sidebar list style",
-                    destination: ListExample(listStyle: SidebarListStyle(), numbers: numbers)
+                    destination: ListExample(listStyle: SidebarListStyle())
                 )
                 Spacer()
             }

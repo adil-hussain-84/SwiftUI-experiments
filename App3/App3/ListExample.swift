@@ -10,13 +10,10 @@ import SwiftUI
 struct ListExample<LS>: View where LS: ListStyle {
     
     let listStyle: LS
-    let numbers: [MyNumber]
     
     var body: some View {
-        List() {
-            ForEach(numbers, id: \.self) { number in
-                MyNumberView(myNumber: number)
-            }
+        List(1..<11) {
+            MyNumberView(myNumber: MyNumber($0))
         }
         .listStyle(listStyle)
         .navigationBarTitle("List Example", displayMode: .inline)
@@ -24,5 +21,5 @@ struct ListExample<LS>: View where LS: ListStyle {
 }
 
 #Preview {
-    ListExample(listStyle: PlainListStyle(), numbers: [MyNumber(1)])
+    ListExample(listStyle: PlainListStyle())
 }
