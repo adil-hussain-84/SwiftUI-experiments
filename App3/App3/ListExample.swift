@@ -16,8 +16,6 @@ struct ListExample<LS>: View where LS: ListStyle {
         List() {
             ForEach(numbers, id: \.self) { number in
                 MyNumberView(myNumber: number)
-                    .onAppear { print("onAppear: \(number.number)") }
-                    .onDisappear { print("onDisappear: \(number.number)") }
             }
         }
         .listStyle(listStyle)

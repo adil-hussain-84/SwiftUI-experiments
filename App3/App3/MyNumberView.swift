@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MyNumberView: View {
     
+    @State private var isDragging = false
     @State private var isPressed = false
     @State private var isTapped = false
     
@@ -24,28 +25,38 @@ struct MyNumberView: View {
         .listRowBackground(getListRowBackground())
         .contentShape(Rectangle()) // Makes the entire HStack tappable
         .onTapGesture {
-            withAnimation {
-                isTapped = true
-            }
+            withAnimation { isTapped = true }
             
-            print("\(myNumber.number) tapped")
+            onTap()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                withAnimation {
-                    isTapped = false
-                }
+                withAnimation { isTapped = false }
             }
         }
         .gesture(
             DragGesture(minimumDistance: 0)
-                .onChanged { _ in
-                    withAnimation {
-                        isPressed = true
+                .onChanged { gesture in
+                    if !isDragging {
+                        isDragging = true
+                        withAnimation { isPressed = true }
+                        return
+                    }
+                    
+                    if (isPressed) {
+                        let absoluteHeight = abs(gesture.translation.height)
+                        let absoluteWidth = abs(gesture.translation.width)
+                        
+                        if (absoluteHeight > 7 || absoluteWidth > 7) {
+                            withAnimation { isPressed = false }
+                        }
                     }
                 }
                 .onEnded { _ in
-                    withAnimation {
-                        isPressed = false
+                    isDragging = false
+                    
+                    if (isPressed) {
+                        onTap()
+                        withAnimation { isPressed = false }
                     }
                 }
         )
@@ -76,6 +87,10 @@ struct MyNumberView: View {
         } else {
             return Color.clear
         }
+    }
+    
+    private func onTap() {
+        print("\(getTitleText()) tapped")
     }
 }
 
