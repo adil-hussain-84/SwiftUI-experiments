@@ -8,6 +8,14 @@
 import Foundation
 
 struct MyNumber: Identifiable, Hashable {
-    let name: String
-    let id = UUID()
+
+    let number: Int
+    
+    init(_ number: Int) {
+        self.number = number
+    }
+    
+    var id: Int {
+        return number
+    }
 }

@@ -7,34 +7,24 @@
 
 import SwiftUI
 
-struct ListExample: View {
+struct ListExample<LS>: View where LS: ListStyle {
     
-    private let numbers: [MyNumber]
-    
-    init(_ numbers: [MyNumber]) {
-        self.numbers = numbers
-    }
+    let listStyle: LS
+    let numbers: [MyNumber]
     
     var body: some View {
         List() {
-            Text("Title")
-                .font(.title)
-                .onAppear { print("onAppear: Title") }
-                .onDisappear { print("onDisappear: Title") }
-            Text("Subtitle")
-                .font(.title2)
-                .onAppear { print("onAppear: Subtitle") }
-                .onDisappear { print("onDisappear: Subtitle") }
             ForEach(numbers, id: \.self) { number in
                 MyNumberView(myNumber: number)
-                    .onAppear { print("onAppear: \(number.name)") }
-                    .onDisappear { print("onDisappear: \(number.name)") }
+                    .onAppear { print("onAppear: \(number.number)") }
+                    .onDisappear { print("onDisappear: \(number.number)") }
             }
         }
+        .listStyle(listStyle)
         .navigationBarTitle("List Example", displayMode: .inline)
     }
 }
 
 #Preview {
-    ListExample([MyNumber(name: "One")])
+    ListExample(listStyle: PlainListStyle(), numbers: [MyNumber(1)])
 }

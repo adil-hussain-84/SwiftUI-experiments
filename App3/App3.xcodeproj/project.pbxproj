@@ -13,8 +13,6 @@
 		BC28B3CD26E21359001420E3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC28B3CC26E21359001420E3 /* Preview Assets.xcassets */; };
 		BC28B3D626E2438E001420E3 /* MyNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B3D526E2438E001420E3 /* MyNumberView.swift */; };
 		BC28B3D826E2439F001420E3 /* MyNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B3D726E2439F001420E3 /* MyNumber.swift */; };
-		BC28B3DA26E24FAC001420E3 /* ListInVStackExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B3D926E24FAC001420E3 /* ListInVStackExample.swift */; };
-		BC28B3DC26E24FD2001420E3 /* LazyVStackExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC28B3DB26E24FD2001420E3 /* LazyVStackExample.swift */; };
 		BCDA7D5C26F4F1DC0025EDD8 /* ListExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDA7D5B26F4F1DC0025EDD8 /* ListExample.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +25,6 @@
 		BC28B3CE26E21359001420E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC28B3D526E2438E001420E3 /* MyNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNumberView.swift; sourceTree = "<group>"; };
 		BC28B3D726E2439F001420E3 /* MyNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNumber.swift; sourceTree = "<group>"; };
-		BC28B3D926E24FAC001420E3 /* ListInVStackExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInVStackExample.swift; sourceTree = "<group>"; };
-		BC28B3DB26E24FD2001420E3 /* LazyVStackExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyVStackExample.swift; sourceTree = "<group>"; };
 		BCDA7D5B26F4F1DC0025EDD8 /* ListExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,9 +62,7 @@
 				BC28B3C926E21359001420E3 /* Assets.xcassets */,
 				BC28B3C726E21355001420E3 /* ContentView.swift */,
 				BC28B3CE26E21359001420E3 /* Info.plist */,
-				BC28B3DB26E24FD2001420E3 /* LazyVStackExample.swift */,
 				BCDA7D5B26F4F1DC0025EDD8 /* ListExample.swift */,
-				BC28B3D926E24FAC001420E3 /* ListInVStackExample.swift */,
 				BC28B3D726E2439F001420E3 /* MyNumber.swift */,
 				BC28B3D526E2438E001420E3 /* MyNumberView.swift */,
 				BC28B3CB26E21359001420E3 /* Preview Content */,
@@ -112,7 +106,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					BC28B3C126E21355001420E3 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -155,11 +149,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC28B3D826E2439F001420E3 /* MyNumber.swift in Sources */,
-				BC28B3DA26E24FAC001420E3 /* ListInVStackExample.swift in Sources */,
 				BC28B3C826E21355001420E3 /* ContentView.swift in Sources */,
 				BC28B3C626E21355001420E3 /* App3App.swift in Sources */,
 				BCDA7D5C26F4F1DC0025EDD8 /* ListExample.swift in Sources */,
-				BC28B3DC26E24FD2001420E3 /* LazyVStackExample.swift in Sources */,
 				BC28B3D626E2438E001420E3 /* MyNumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +163,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -219,7 +212,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -233,6 +226,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -275,7 +269,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -9,25 +9,31 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private let numbers = [
-        MyNumber(name: "One"),
-        MyNumber(name: "Two"),
-        MyNumber(name: "Three"),
-        MyNumber(name: "Four"),
-        MyNumber(name: "Five"),
-        MyNumber(name: "Six"),
-        MyNumber(name: "Seven"),
-        MyNumber(name: "Eight"),
-        MyNumber(name: "Nine"),
-        MyNumber(name: "Ten")
-    ]
+    private let numbers = (1...10).map { MyNumber($0) }
     
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink("LazyVStack Example", destination: LazyVStackExample(numbers))
-                NavigationLink("List in VStack Example", destination: ListInVStackExample(numbers))
-                NavigationLink("List Example", destination: ListExample(numbers))
+            VStack(spacing: 8) {
+                NavigationLink(
+                    "Show list with default list style",
+                    destination: ListExample(listStyle: DefaultListStyle(), numbers: numbers)
+                )
+                NavigationLink(
+                    "Show list with plain list style",
+                    destination: ListExample(listStyle: PlainListStyle(), numbers: numbers)
+                )
+                NavigationLink(
+                    "Show list with inset list style",
+                    destination: ListExample(listStyle: InsetListStyle(), numbers: numbers)
+                )
+                NavigationLink(
+                    "Show list with grouped list style",
+                    destination: ListExample(listStyle: GroupedListStyle(), numbers: numbers)
+                )
+                NavigationLink(
+                    "Show list with sidebar list style",
+                    destination: ListExample(listStyle: SidebarListStyle(), numbers: numbers)
+                )
                 Spacer()
             }
             .navigationTitle("Home")
