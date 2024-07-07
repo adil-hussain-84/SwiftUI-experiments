@@ -1,6 +1,6 @@
 # SwiftUI Navigation Problem
 
-This UIKit application demonstrates that a SwiftUI view which is presented modally within a [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller) cannot be dismissed programmatically in iOS 14 and older devices.
+This UIKit application demonstrates that a SwiftUI view which is presented modally within a [UIHostingController](https://developer.apple.com/documentation/swiftui/uihostingcontroller) cannot be dismissed programmatically on iOS 14 and older devices.
 
 This problem is particularly severe in landspace orientation because the modal takes up the full screen and cannot be dismissed by swiping down, as demonstrated below:
 
