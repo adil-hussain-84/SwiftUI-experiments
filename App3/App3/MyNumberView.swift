@@ -47,6 +47,7 @@ struct MyNumberView: View {
                         let absoluteWidth = abs(gesture.translation.width)
                         
                         if (absoluteHeight > 7 || absoluteWidth > 7) {
+                            // cancel the press given that the user has moved their finger too far from the starting point
                             withAnimation { isPressed = false }
                         }
                     }
