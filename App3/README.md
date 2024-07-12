@@ -4,6 +4,6 @@ This SwiftUI application demonstrates how to display an array of items in a [Lis
 
 Here's a demo of the app running on an iPhone 15 Simulator:
 
-<img src="demo.gif" alt="Demo of app" width="50%" height="50%"/>
+<img src="demo.gif" alt="Demo of app" />
 
 [1]: https://developer.apple.com/documentation/swiftui/list
