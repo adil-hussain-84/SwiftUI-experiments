@@ -19,7 +19,6 @@ struct MyNumberView: View {
         HStack {
             Text(getTitleText())
                 .font(.body)
-                .padding()
             Spacer()
         }
         .listRowBackground(getListRowBackground())
@@ -95,8 +94,18 @@ struct MyNumberView: View {
     }
 }
 
-#Preview {
+#Preview("Default list style") {
     List {
-        MyNumberView(myNumber: MyNumber(1))
+        Section("Header") {
+            MyNumberView(myNumber: MyNumber(1))
+        }
+    }.listStyle(DefaultListStyle())
+}
+
+#Preview("Plain list style") {
+    List {
+        Section("Header") {
+            MyNumberView(myNumber: MyNumber(1))
+        }
     }.listStyle(PlainListStyle())
 }
