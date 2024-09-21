@@ -20,8 +20,8 @@ final class App5UITests: XCTestCase {
     /// This test function taps on a ``DatePicker`` to reveal the calendar-style popup,
     /// chooses a date in the popup and then dismisses the popup by force tapping on the ``DatePicker``.
     ///
-    /// This test assumes that the device's Region is set to "United States".
-    func test_date_picker_1() {
+    /// This test assumes that the device's Region is set to "United Kingdom" or "United States".
+    func test_dismiss_date_picker_popup_by_force_tapping_on_the_date_picker() {
         // 1. Launch the app with an argument that fakes the current date in the app
         let date = Date.from(year: 2022, month: 11, day: 26, hour: 12, minute: 0)
         
@@ -43,7 +43,7 @@ final class App5UITests: XCTestCase {
         XCTAssertFalse(titleText.isHittable)
         
         // 5. Change the selected date
-        datePickerCollectionViewsQuery.buttons["Friday, 25 November"].tap()
+        datePickerCollectionViewsQuery.buttons["Friday 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
         datePicker.forceTap()
@@ -58,8 +58,8 @@ final class App5UITests: XCTestCase {
     /// This test function taps on a ``DatePicker`` to reveal the calendar-style popup,
     /// chooses a date in the popup and then dismisses the popup by tapping on the `"PopoverDismissRegion"` button.
     ///
-    /// This test assumes that the device's Region is set to "United States".
-    func test_date_picker_2() {
+    /// This test assumes that the device's Region is set to "United Kingdom" or "United States".
+    func test_dismiss_date_picker_popup_by_tapping_on_the_popover_dismiss_region() {
         // 1. Launch the app with an argument that fakes the current date in the app
         let date = Date.from(year: 2022, month: 11, day: 26, hour: 12, minute: 0)
         
@@ -82,7 +82,7 @@ final class App5UITests: XCTestCase {
         XCTAssertFalse(titleText.isHittable)
         
         // 5. Change the selected date
-        datePickerCollectionViewsQuery.buttons["Friday, 25 November"].tap()
+        datePickerCollectionViewsQuery.buttons["Friday 25 November"].tap()
         
         // 6. Dismiss the DatePicker popup
         popoverDismissRegion.tap()
