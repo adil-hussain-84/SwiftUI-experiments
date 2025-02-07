@@ -6,6 +6,10 @@ This SwiftUI application demonstrates how to schedule synchronous and asynchrono
 
 Refer to the four Buttons in the [ContentView][4] struct. Each Button calls into a function of a [MainActor][2] view model either directly or via a [Task][3]. Each of the functions in the view model is declared as `nonisolated` or `async` or neither or both.
 
+When you run the app, you will see a user interface as follows:
+
+<img src="Screenshot.png" alt="Screenshot of application" width=25%>
+
 ## Further reading
 
 1. [Should I declare a 'nonisolated' or 'async' function in my 'MainActor' view model for work that will run inside and outside of the MainActor context?][5]
