@@ -22,4 +22,7 @@
    <FileRef
       location = "group:App7/App7.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:App8/App8.xcodeproj">
+   </FileRef>
 </Workspace>

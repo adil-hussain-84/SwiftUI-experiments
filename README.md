@@ -13,3 +13,4 @@ The applications in this project are as follows:
 | [App5](App5) | A SwiftUI application which demonstrates how to write a UI test which interacts with a `DatePicker`.                                                                          |
 | [App6](App6) | A SwiftUI application which demonstrates how to schedule asynchronous work when a `Button` is tapped.                                                                         |
 | [App7](App7) | A SwiftUI application which demonstrates how to initialise an `ObservableObject` as a `StateObject` in a View's `init` method.                                                |
+| [App8](App8) | A UIKit application which demonstrates how a SwiftUI view can have a strong reference cycle with its parent view controller.                                                  |
