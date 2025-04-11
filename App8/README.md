@@ -1,7 +1,5 @@
 # UIViewController and SwiftUI view reference cycle example
 
-## About
-
 This UIKit application demonstrates how you can accidentally create a strong reference cycle between a [UIViewController][1] and a SwiftUI view if you're not paying attention.
 
 A strong reference cycle in such a context is a problem because the parent view controller and the [UIHostingController][2] which is hosting the SwiftUI view will both stick around in memory even after the parent view controller has been dismissed.
