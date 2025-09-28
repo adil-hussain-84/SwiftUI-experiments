@@ -25,6 +25,9 @@ import Foundation
     /// This function is declared as `async` because it makes a call that requires an `await`.
     /// It is declared without the `nonisolated` keyword so that it can access methods isolated to this actor without an `await`.
     func executeActorIsolatedAsyncOperation() async {
+        print("executeActorIsolatedAsyncOperation() function running on \(Thread.currentThreadType).")
+        print("executeActorIsolatedAsyncOperation() function henceforth referred to as \"Op 1\".")
+        
         if (!changeStateTo(.busy)) {
             print("Op 1 ==> Abandoned before starting; The view model is busy <== Op 1")
             return
@@ -48,6 +51,9 @@ import Foundation
     /// it makes a longstanding blocking call (i.e. the `sleep` call).
     /// It requires an  `await` to access methods isolated to this actor because it is `nonisolated`.
     nonisolated func executeNonisolatedAsyncOperation() async {
+        print("executeNonisolatedAsyncOperation() function running on \(Thread.currentThreadType).")
+        print("executeNonisolatedAsyncOperation() function henceforth referred to as \"Op 2\".")
+        
         if await (!changeStateTo(.busy)) {
             print("Op 2 ==> Abandoned before starting; The view model is busy <== Op 2")
             return
@@ -66,6 +72,9 @@ import Foundation
     /// This function is declared without the `async` and `nonisolated` keywords because
     /// it makes no calls that require an `await` and it makes no longstanding blocking calls.
     func executeActorIsolatedSynchronousOperation() {
+        print("executeActorIsolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
+        print("executeActorIsolatedSynchronousOperation() function henceforth referred to as \"Op 3\".")
+        
         if (!changeStateTo(.busy)) {
             print("Op 3 ==> Abandoned before starting; The view model is busy <== Op 3")
             return
@@ -83,6 +92,9 @@ import Foundation
     /// This function is declared as `nonisolated` because it does not access any methods or properties isolated to this actor.
     /// It is declared without the `async` keyword because it makes no calls that require an `await` and it makes no longstanding blocking calls.
     nonisolated func executeNonisolatedSynchronousOperation() {
+        print("executeNonisolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
+        print("executeNonisolatedSynchronousOperation() function henceforth referred to as \"Op 4\".")
+        
         print("Op 4 ==> Starting <== Op 4")
         print("Op 4 ==> Completed <== Op 4")
     }
@@ -109,6 +121,19 @@ extension Int {
         case 1: return "1st"
         case 2: return "2nd"
         default: return "\(self)th"
+        }
+    }
+}
+
+extension Thread {
+    
+    /// - Returns: Either `"Main thread"` or `"Background thread"`
+    /// depending on whether the current thread is the main thread or a background thread.
+    public static var currentThreadType: String {
+        if (Thread.current.isMainThread) {
+            return "Main thread"
+        } else {
+            return "Background thread"
         }
     }
 }
