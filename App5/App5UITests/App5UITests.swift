@@ -7,14 +7,13 @@
 
 import XCTest
 
-final class App5UITests: XCTestCase {
+@MainActor final class App5UITests: XCTestCase {
     
-    private var application: XCUIApplication!
+    private let application = XCUIApplication()
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         continueAfterFailure = false
-        application = XCUIApplication()
     }
     
     /// This test function taps on a ``DatePicker`` to reveal the calendar-style popup,

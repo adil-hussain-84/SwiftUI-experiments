@@ -7,14 +7,13 @@
 
 import XCTest
 
-final class App4UITests: XCTestCase {
+@MainActor final class App4UITests: XCTestCase {
 
-    private var application: XCUIApplication!
+    private let application = XCUIApplication()
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         continueAfterFailure = false
-        application = XCUIApplication()
     }
 
     func test_state_of_views_when_app_is_launched() throws {
