@@ -33,6 +33,14 @@ struct ContentView: View {
             
             Divider()
             
+            Button("Execute Concurrent\nAsynchronous Operation") {
+                Task(priority: .userInitiated) {
+                    await viewModel.executeConcurrentAsyncOperation()
+                }
+            }
+            
+            Divider()
+            
             Button("Execute Actor-Isolated\nSynchronous Operation") {
                 viewModel.executeActorIsolatedSynchronousOperation()
             }

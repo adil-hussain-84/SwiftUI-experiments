@@ -13,6 +13,7 @@ import Foundation
     
     private var numberOfBusyToFreeStateTransitions = 1
     
+    /// - Returns: The text to show as the view's current state.
     func stateLabel() -> String {
         let ordinal = numberOfBusyToFreeStateTransitions.toOrdinal()
         
@@ -23,7 +24,7 @@ import Foundation
     }
     
     /// This function is declared as `async` because it makes a call that requires an `await`.
-    /// It is declared without the `nonisolated` keyword so that it can access methods isolated to this actor without an `await`.
+    /// It is declared without the `nonisolated` keyword so that it can access functions isolated to this actor without an `await`.
     func executeActorIsolatedAsyncOperation() async {
         print("executeActorIsolatedAsyncOperation() function running on \(Thread.currentThreadType).")
         print("executeActorIsolatedAsyncOperation() function henceforth referred to as \"Op 1\".")
@@ -48,8 +49,8 @@ import Foundation
     }
     
     /// This function is declared as `nonisolated` and `async` because
-    /// it makes a longstanding blocking call (i.e. the `sleep` call).
-    /// It requires an  `await` to access methods isolated to this actor because it is `nonisolated`.
+    /// it makes a longstanding blocking call (i.e. the `sleep` call) that we want to execute in a background thread.
+    /// It requires an  `await` to access functions isolated to this actor because it is `nonisolated`.
     nonisolated func executeNonisolatedAsyncOperation() async {
         print("executeNonisolatedAsyncOperation() function running on \(Thread.currentThreadType).")
         print("executeNonisolatedAsyncOperation() function henceforth referred to as \"Op 2\".")
@@ -69,34 +70,57 @@ import Foundation
         }
     }
     
-    /// This function is declared without the `async` and `nonisolated` keywords because
-    /// it makes no calls that require an `await` and it makes no longstanding blocking calls.
-    func executeActorIsolatedSynchronousOperation() {
-        print("executeActorIsolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
-        print("executeActorIsolatedSynchronousOperation() function henceforth referred to as \"Op 3\".")
+    /// This function is declared as `@concurrent` and `async` because
+    /// it makes a longstanding blocking call (i.e. the `sleep` call) that we want to execute in a background thread.
+    /// It requires an  `await` to access functions isolated to this actor because it is `@concurrent`.
+    @concurrent func executeConcurrentAsyncOperation() async {
+        print("executeConcurrentAsyncOperation() function running on \(Thread.currentThreadType).")
+        print("executeConcurrentAsyncOperation() function henceforth referred to as \"Op 3\".")
         
-        if (!changeStateTo(.busy)) {
+        if await (!changeStateTo(.busy)) {
             print("Op 3 ==> Abandoned before starting; The view model is busy <== Op 3")
             return
         }
         
         print("Op 3 ==> Starting <== Op 3")
+        sleep(3) // this call blocks the underlying thread
         print("Op 3 ==> Completed <== Op 3")
         
-        if (!changeStateTo(.free)) {
+        if await (!changeStateTo(.free)) {
             print("Op 3 ==> Strange! Couldn't change the state back to free after completion <== Op 3")
             return
         }
     }
     
-    /// This function is declared as `nonisolated` because it does not access any methods or properties isolated to this actor.
-    /// It is declared without the `async` keyword because it makes no calls that require an `await` and it makes no longstanding blocking calls.
-    nonisolated func executeNonisolatedSynchronousOperation() {
-        print("executeNonisolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
-        print("executeNonisolatedSynchronousOperation() function henceforth referred to as \"Op 4\".")
+    /// This function is declared without the `async` and `nonisolated` keywords because
+    /// it makes no calls that require an `await` and it makes no longstanding blocking calls.
+    /// It can access functions isolated to this actor without an  `await` because it is itself isolated to this actor.
+    func executeActorIsolatedSynchronousOperation() {
+        print("executeActorIsolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
+        print("executeActorIsolatedSynchronousOperation() function henceforth referred to as \"Op 4\".")
+        
+        if (!changeStateTo(.busy)) {
+            print("Op 4 ==> Abandoned before starting; The view model is busy <== Op 4")
+            return
+        }
         
         print("Op 4 ==> Starting <== Op 4")
         print("Op 4 ==> Completed <== Op 4")
+        
+        if (!changeStateTo(.free)) {
+            print("Op 4 ==> Strange! Couldn't change the state back to free after completion <== Op 4")
+            return
+        }
+    }
+    
+    /// This function is declared as `nonisolated` because it does not access any functions or properties isolated to this actor.
+    /// It is declared without the `async` keyword because it makes no calls that require an `await` and it makes no longstanding blocking calls.
+    nonisolated func executeNonisolatedSynchronousOperation() {
+        print("executeNonisolatedSynchronousOperation() function running on \(Thread.currentThreadType).")
+        print("executeNonisolatedSynchronousOperation() function henceforth referred to as \"Op 5\".")
+        
+        print("Op 5 ==> Starting <== Op 5")
+        print("Op 5 ==> Completed <== Op 5")
     }
     
     private func changeStateTo(_ newState: State) -> Bool {
@@ -120,6 +144,7 @@ extension Int {
         switch (self) {
         case 1: return "1st"
         case 2: return "2nd"
+        case 3: return "3rd"
         default: return "\(self)th"
         }
     }
