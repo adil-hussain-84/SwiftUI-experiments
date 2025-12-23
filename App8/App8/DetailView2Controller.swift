@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+/// This `UIViewController` represents the correct way to create a reference from a SwiftUI view to its parent view controller.
 class DetailView2Controller: UIViewController {
 
     override func viewDidLoad() {
