@@ -1,5 +1,5 @@
 //
-//  HomePage.swift
+//  Page.swift
 //  App9
 //
 //  Created by Adil Hussain on 29/12/2025.
@@ -7,19 +7,24 @@
 
 import SwiftUI
 
-struct HomePage: View {
+struct Page: View {
     
     let pageNumber: Int
     let headerText: String
     let footerText: String
+    let safeAreaInsets: EdgeInsets
     let focusedPageNumber: AccessibilityFocusState<Int?>.Binding
     let shouldShowPreviousPageButton: Bool
     let shouldShowNextPageButton: Bool
     let scrollToPreviousPage: (() -> Void)
     let scrollToNextPage: (() -> Void)
     
+    private let horizontalPadding: CGFloat = 16
+    
     var body: some View {
-        VStack(
+        print("Page \(pageNumber)")
+        
+        return VStack(
             alignment: .leading,
             spacing: 0,
         ) {
@@ -41,14 +46,21 @@ struct HomePage: View {
                 .disabled(!shouldShowNextPageButton)
                 .hidden(!shouldShowNextPageButton)
             }
-            .padding()
+            .padding(.vertical)
+            .padding(.leading, max(safeAreaInsets.leading, horizontalPadding))
+            .padding(.trailing, max(safeAreaInsets.trailing, horizontalPadding))
             .background(Color(.secondarySystemBackground))
             Text(verbatim: "Some text")
-                .padding()
+                .padding(.vertical)
+                .padding(.leading, max(safeAreaInsets.leading, horizontalPadding))
+                .padding(.trailing, max(safeAreaInsets.trailing, horizontalPadding))
             Spacer()
             Text(verbatim: footerText)
                 .frame(maxWidth: .infinity)
-                .padding()
+                .padding(.top, 16)
+                .padding(.bottom, max(safeAreaInsets.bottom, 16))
+                .padding(.leading, max(safeAreaInsets.leading, horizontalPadding))
+                .padding(.trailing, max(safeAreaInsets.trailing, horizontalPadding))
                 .background(Color(.secondarySystemBackground))
         }
     }
@@ -57,14 +69,17 @@ struct HomePage: View {
 #Preview {
     @AccessibilityFocusState var focusedPageNumber: Int?
     
-    HomePage(
-        pageNumber: 1,
-        headerText: "Header 1",
-        footerText: "Footer 1",
-        focusedPageNumber: $focusedPageNumber,
-        shouldShowPreviousPageButton: true,
-        shouldShowNextPageButton: true,
-        scrollToPreviousPage: {},
-        scrollToNextPage: {},
-    )
+    GeometryReader { geometryProxy in
+        Page(
+            pageNumber: 1,
+            headerText: "Header 1",
+            footerText: "Footer 1",
+            safeAreaInsets: geometryProxy.safeAreaInsets,
+            focusedPageNumber: $focusedPageNumber,
+            shouldShowPreviousPageButton: true,
+            shouldShowNextPageButton: true,
+            scrollToPreviousPage: {},
+            scrollToNextPage: {},
+        )
+    }
 }
