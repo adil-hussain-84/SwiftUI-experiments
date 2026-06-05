@@ -11,8 +11,7 @@ struct HomeScreen: View {
     
     var body: some View {
         VStack {
-            NavigationLink("Pager1", destination: Pager1())
-            NavigationLink("Pager2", destination: Pager2())
+            NavigationLink("Pager", destination: Pager())
         }
         .navigationTitle("Home")
         .navigationBarTitleDisplayMode(.automatic)

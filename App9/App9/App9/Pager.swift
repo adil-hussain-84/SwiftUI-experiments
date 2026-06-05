@@ -1,5 +1,5 @@
 //
-//  Pager2.swift
+//  Pager.swift
 //  App9
 //
 //  Created by Adil Hussain on 31/05/2026.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Pager2: View {
+struct Pager: View {
 
     private let totalPages = 5
     private let renderRadius = 1
@@ -55,6 +55,7 @@ struct Pager2: View {
                     }
                     .scrollTargetLayout()
                 }
+                .ignoresSafeArea(edges: [.bottom, .horizontal])
                 .scrollTargetBehavior(.paging)
                 .scrollPosition($scrollPosition)
                 .onChange(of: scrollPosition) { _, newValue in
@@ -63,9 +64,9 @@ struct Pager2: View {
                     // page id; ignore transient nils so the target page never unmounts.
                     if let id = newValue.viewID(type: Int.self) {
                         renderAnchor = id
+                        focusedPageNumber = id
                     }
                 }
-                .ignoresSafeArea(edges: [.bottom, .horizontal])
                 .task(id: pageWidth) {
                     print("task(id: \(pageWidth))")
                     // Re-snap to the current page once the scroll view has a real width,
@@ -89,6 +90,6 @@ struct Pager2: View {
 
 #Preview {
     NavigationStack {
-        Pager2()
+        Pager()
     }
 }
