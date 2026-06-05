@@ -37,6 +37,7 @@ struct Page: View {
                 .hidden(!shouldShowPreviousPageButton)
                 Spacer()
                 Text(verbatim: headerText)
+                    .accessibilityAddTraits(.isHeader)
                     .accessibilityFocused(focusedPageNumber, equals: pageNumber)
                 Spacer()
                 Button(action: { scrollToNextPage() }) {

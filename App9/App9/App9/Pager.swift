@@ -60,11 +60,16 @@ struct Pager: View {
                 .scrollPosition($scrollPosition)
                 .onChange(of: scrollPosition) { _, newValue in
                     print("onChange(of: \(scrollPosition))")
-                    // Only advance the render anchor when the scroll view reports a real
-                    // page id; ignore transient nils so the target page never unmounts.
+                    // Only advance the render anchor when the scroll view reports a real page id;
+                    // ignore transient nils so the target page never unmounts.
                     if let id = newValue.viewID(type: Int.self) {
                         renderAnchor = id
-                        focusedPageNumber = id
+                        
+                        Task(priority: .userInitiated) {
+                            // Sleep briefly to allow the page change animation to complete
+                            try? await Task.sleep(nanoseconds: 300_000_000)
+                            focusedPageNumber = id
+                        }
                     }
                 }
                 .task(id: pageWidth) {
@@ -75,7 +80,7 @@ struct Pager: View {
                 }
             }
         }
-        .navigationTitle("Pager2")
+        .navigationTitle("Pager")
         .navigationBarTitleDisplayMode(.inline)
     }
 
