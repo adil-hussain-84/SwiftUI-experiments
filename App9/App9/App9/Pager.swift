@@ -51,6 +51,7 @@ struct Pager: View {
                             }
                             .id(pageNumber)
                             .frame(width: pageWidth, height: pageHeight)
+                            .accessibilityHidden(pageNumber != renderAnchor)
                         }
                     }
                     .scrollTargetLayout()
