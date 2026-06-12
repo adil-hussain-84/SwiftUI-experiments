@@ -25,11 +25,9 @@ struct Pager: View {
     }
     
     var body: some View {
-        GeometryReader { geometryProxy in
-            body(for: geometryProxy)
-        }
-        .navigationTitle("Pager")
-        .navigationBarTitleDisplayMode(.inline)
+        GeometryReader { geometryProxy in body(for: geometryProxy) }
+            .navigationTitle("Pager")
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     @ViewBuilder
