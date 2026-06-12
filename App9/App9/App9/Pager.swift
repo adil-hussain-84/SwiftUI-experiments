@@ -34,7 +34,6 @@ struct Pager: View {
     private func body(for geometryProxy: GeometryProxy) -> some View {
         let safeAreaInsets = geometryProxy.safeAreaInsets
         let pageWidth = geometryProxy.size.width + safeAreaInsets.leading + safeAreaInsets.trailing
-        let pageHeight = geometryProxy.size.height + safeAreaInsets.bottom
         
         ScrollView(.horizontal, showsIndicators: false) {
             // Deliberately using HStack and not LazyHStack because LazyHStack has issues snapping
@@ -59,7 +58,7 @@ struct Pager: View {
                         }
                     }
                     .id(pageNumber)
-                    .frame(width: pageWidth, height: pageHeight)
+                    .containerRelativeFrame(.horizontal)
                     .accessibilityHidden(pageNumber != currentPageNumber)
                 }
             }
@@ -89,6 +88,9 @@ struct Pager: View {
             }
         }
         .task(id: pageWidth) {
+            // Sleep briefly to allow the initial screen load
+            // or subsequent screen orientation change to complete
+            try? await Task.sleep(for: .seconds(0.1))
             // Re-snap to the current page once the scroll view has a real width,
             // and after rotations when the page width changes.
             scrollPosition.scrollTo(id: currentPageNumber)
