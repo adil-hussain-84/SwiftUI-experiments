@@ -13,7 +13,7 @@ struct Page: View {
     let headerText: String
     let footerText: String
     let safeAreaInsets: EdgeInsets
-    let focusedPageNumber: AccessibilityFocusState<Int?>.Binding
+    let accessibilityFocusedPageNumber: AccessibilityFocusState<Int?>.Binding
     let shouldShowPreviousPageButton: Bool
     let shouldShowNextPageButton: Bool
     let scrollToPreviousPage: (() -> Void)
@@ -38,7 +38,7 @@ struct Page: View {
                 Spacer()
                 Text(verbatim: headerText)
                     .accessibilityAddTraits(.isHeader)
-                    .accessibilityFocused(focusedPageNumber, equals: pageNumber)
+                    .accessibilityFocused(accessibilityFocusedPageNumber, equals: pageNumber)
                 Spacer()
                 Button(action: { scrollToNextPage() }) {
                     Image(systemName: "chevron.right")
@@ -68,7 +68,7 @@ struct Page: View {
 }
 
 #Preview {
-    @AccessibilityFocusState var focusedPageNumber: Int?
+    @AccessibilityFocusState var accessibilityFocusedPageNumber: Int?
     
     GeometryReader { geometryProxy in
         Page(
@@ -76,7 +76,7 @@ struct Page: View {
             headerText: "Header 1",
             footerText: "Footer 1",
             safeAreaInsets: geometryProxy.safeAreaInsets,
-            focusedPageNumber: $focusedPageNumber,
+            accessibilityFocusedPageNumber: $accessibilityFocusedPageNumber,
             shouldShowPreviousPageButton: true,
             shouldShowNextPageButton: true,
             scrollToPreviousPage: {},

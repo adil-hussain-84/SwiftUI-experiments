@@ -10,16 +10,18 @@ import SwiftUI
 struct Pager: View {
 
     private let totalPages = 5
+    
+    /// Determines how many pages to render before and after the current page.
     private let renderRadius = 1
 
     @State private var scrollPosition: ScrollPosition
-    @State private var renderAnchor: Int
-    @AccessibilityFocusState private var focusedPageNumber: Int?
+    @State private var currentPageNumber: Int
+    @AccessibilityFocusState private var accessibilityFocusedPageNumber: Int?
 
     init() {
         let initial = 3
         _scrollPosition = State(initialValue: ScrollPosition(id: initial))
-        _renderAnchor = State(initialValue: initial)
+        _currentPageNumber = State(initialValue: initial)
     }
 
     var body: some View {
@@ -30,6 +32,8 @@ struct Pager: View {
 
             if pageWidth > 0 {
                 ScrollView(.horizontal, showsIndicators: false) {
+                    // Deliberately using HStack and not LazyHStack because LazyHStack has issues snapping
+                    // the current page fully into view on screen orientation from portrait to landscape
                     HStack(spacing: 0) {
                         ForEach(1...totalPages, id: \.self) { pageNumber in
                             Group {
@@ -39,7 +43,7 @@ struct Pager: View {
                                         headerText: "Header \(pageNumber)",
                                         footerText: "Footer \(pageNumber)",
                                         safeAreaInsets: safeAreaInsets,
-                                        focusedPageNumber: $focusedPageNumber,
+                                        accessibilityFocusedPageNumber: $accessibilityFocusedPageNumber,
                                         shouldShowPreviousPageButton: pageNumber > 1,
                                         shouldShowNextPageButton: pageNumber < totalPages,
                                         scrollToPreviousPage: { scrollToPage(pageNumber - 1) },
@@ -51,7 +55,7 @@ struct Pager: View {
                             }
                             .id(pageNumber)
                             .frame(width: pageWidth, height: pageHeight)
-                            .accessibilityHidden(pageNumber != renderAnchor)
+                            .accessibilityHidden(pageNumber != currentPageNumber)
                         }
                     }
                     .scrollTargetLayout()
@@ -60,24 +64,29 @@ struct Pager: View {
                 .scrollTargetBehavior(.paging)
                 .scrollPosition($scrollPosition)
                 .onChange(of: scrollPosition) { _, newScrollPosition in
-                    print("onChange(of: \(scrollPosition))")
-                    // Only advance the render anchor when the scroll view reports a real page id;
-                    // ignore transient nils so the target page never unmounts.
-                    guard let newViewId = newScrollPosition.viewID(type: Int.self) else { return }
+                    guard let newPageNumber = newScrollPosition.viewID(type: Int.self) else { return }
                     
-                    renderAnchor = newViewId
+                    guard (currentPageNumber != newPageNumber) else { return }
+                    
+                    currentPageNumber = newPageNumber
+                }
+                .onChange(of: currentPageNumber) { _, newPageNumber in
+                    let scrollPositionPageNumber = scrollPosition.viewID(type: Int.self)
+                    
+                    guard (scrollPositionPageNumber != newPageNumber) else { return }
+                    
+                    withAnimation { scrollPosition.scrollTo(id: newPageNumber) }
                     
                     Task(priority: .userInitiated) {
                         // Sleep briefly to allow the page change animation to complete
                         try? await Task.sleep(for: .seconds(0.3))
-                        focusedPageNumber = newViewId
+                        accessibilityFocusedPageNumber = newPageNumber
                     }
                 }
                 .task(id: pageWidth) {
-                    print("task(id: \(pageWidth))")
                     // Re-snap to the current page once the scroll view has a real width,
                     // and after rotations when the page width changes.
-                    scrollPosition.scrollTo(id: renderAnchor)
+                    scrollPosition.scrollTo(id: currentPageNumber)
                 }
             }
         }
@@ -85,12 +94,17 @@ struct Pager: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private func shouldRender(_ page: Int) -> Bool {
-        return abs(page - renderAnchor) <= renderRadius
+    /// Determines whether to render the given page number as a `Page` or simply as `Color.clear`.
+    private func shouldRender(_ pageNumber: Int) -> Bool {
+        return abs(pageNumber - currentPageNumber) <= renderRadius
     }
 
-    private func scrollToPage(_ page: Int) {
-        withAnimation(.easeInOut) { scrollPosition.scrollTo(id: page) }
+    /// Updates the ``currentPageNumber`` value.
+    ///
+    /// The page change scroll animation is taken care of by the
+    /// `.onChange(of: currentPageNumber) { ... }` modifier on the `ScrollView`.
+    private func scrollToPage(_ pageNumber: Int) {
+        currentPageNumber = pageNumber
     }
 }
 
