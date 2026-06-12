@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,10 +26,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		C50083342A76C31400B3F9F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -83,8 +81,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App6;
 			productName = App6;
 			productReference = C50083372A76C31400B3F9F7 /* App6.app */;
@@ -98,7 +94,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					C50083362A76C31400B3F9F7 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -106,7 +102,6 @@
 				};
 			};
 			buildConfigurationList = C50083322A76C31400B3F9F7 /* Build configuration list for PBXProject "App6" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -114,6 +109,7 @@
 				Base,
 			);
 			mainGroup = C500832E2A76C31400B3F9F7;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = C50083382A76C31400B3F9F7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,33 +122,30 @@
 /* Begin PBXResourcesBuildPhase section */
 		C50083352A76C31400B3F9F7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				C50083422A76C31500B3F9F7 /* Preview Assets.xcassets in Resources */,
 				C500833F2A76C31500B3F9F7 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C50083332A76C31400B3F9F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				C500833D2A76C31400B3F9F7 /* ContentView.swift in Sources */,
 				C500833B2A76C31400B3F9F7 /* App6App.swift in Sources */,
 				C50083502A76D0F900B3F9F7 /* ContentViewModel.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C50083432A76C31500B3F9F7 /* Debug */ = {
+		C50083432A76C31500B3F9F7 /* Debug configuration for PBXProject "App6" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -212,10 +205,11 @@
 			};
 			name = Debug;
 		};
-		C50083442A76C31500B3F9F7 /* Release */ = {
+		C50083442A76C31500B3F9F7 /* Release configuration for PBXProject "App6" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -269,7 +263,7 @@
 			};
 			name = Release;
 		};
-		C50083462A76C31500B3F9F7 /* Debug */ = {
+		C50083462A76C31500B3F9F7 /* Debug configuration for PBXNativeTarget "App6" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -296,7 +290,7 @@
 			};
 			name = Debug;
 		};
-		C50083472A76C31500B3F9F7 /* Release */ = {
+		C50083472A76C31500B3F9F7 /* Release configuration for PBXNativeTarget "App6" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -329,19 +323,17 @@
 		C50083322A76C31400B3F9F7 /* Build configuration list for PBXProject "App6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C50083432A76C31500B3F9F7 /* Debug */,
-				C50083442A76C31500B3F9F7 /* Release */,
+				C50083432A76C31500B3F9F7 /* Debug configuration for PBXProject "App6" */,
+				C50083442A76C31500B3F9F7 /* Release configuration for PBXProject "App6" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		C50083452A76C31500B3F9F7 /* Build configuration list for PBXNativeTarget "App6" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C50083462A76C31500B3F9F7 /* Debug */,
-				C50083472A76C31500B3F9F7 /* Release */,
+				C50083462A76C31500B3F9F7 /* Debug configuration for PBXNativeTarget "App6" */,
+				C50083472A76C31500B3F9F7 /* Release configuration for PBXNativeTarget "App6" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,10 +29,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BCEC06012658223300DDBCC4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -88,8 +86,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App1;
 			productName = App1;
 			productReference = BCEC06042658223300DDBCC4 /* App1.app */;
@@ -103,7 +99,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					BCEC06032658223300DDBCC4 = {
 						CreatedOnToolsVersion = 12.5;
@@ -111,7 +107,6 @@
 				};
 			};
 			buildConfigurationList = BCEC05FF2658223300DDBCC4 /* Build configuration list for PBXProject "App1" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -119,6 +114,7 @@
 				Base,
 			);
 			mainGroup = BCEC05FB2658223300DDBCC4;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = BCEC06052658223300DDBCC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,34 +127,31 @@
 /* Begin PBXResourcesBuildPhase section */
 		BCEC06022658223300DDBCC4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCEC060F2658223600DDBCC4 /* Preview Assets.xcassets in Resources */,
 				BCEC060C2658223600DDBCC4 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCEC06002658223300DDBCC4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCEC06172658238A00DDBCC4 /* DetailView.swift in Sources */,
 				BCEC060A2658223300DDBCC4 /* ContentView.swift in Sources */,
 				BCEC06082658223300DDBCC4 /* App1App.swift in Sources */,
 				BCE3167A265BA8F2007B661B /* DetailSheetView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BCEC06112658223600DDBCC4 /* Debug */ = {
+		BCEC06112658223600DDBCC4 /* Debug configuration for PBXProject "App1" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -219,10 +212,11 @@
 			};
 			name = Debug;
 		};
-		BCEC06122658223600DDBCC4 /* Release */ = {
+		BCEC06122658223600DDBCC4 /* Release configuration for PBXProject "App1" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -277,7 +271,7 @@
 			};
 			name = Release;
 		};
-		BCEC06142658223600DDBCC4 /* Debug */ = {
+		BCEC06142658223600DDBCC4 /* Debug configuration for PBXNativeTarget "App1" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -296,7 +290,7 @@
 			};
 			name = Debug;
 		};
-		BCEC06152658223600DDBCC4 /* Release */ = {
+		BCEC06152658223600DDBCC4 /* Release configuration for PBXNativeTarget "App1" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -321,19 +315,17 @@
 		BCEC05FF2658223300DDBCC4 /* Build configuration list for PBXProject "App1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCEC06112658223600DDBCC4 /* Debug */,
-				BCEC06122658223600DDBCC4 /* Release */,
+				BCEC06112658223600DDBCC4 /* Debug configuration for PBXProject "App1" */,
+				BCEC06122658223600DDBCC4 /* Release configuration for PBXProject "App1" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BCEC06132658223600DDBCC4 /* Build configuration list for PBXNativeTarget "App1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCEC06142658223600DDBCC4 /* Debug */,
-				BCEC06152658223600DDBCC4 /* Release */,
+				BCEC06142658223600DDBCC4 /* Debug configuration for PBXNativeTarget "App1" */,
+				BCEC06152658223600DDBCC4 /* Release configuration for PBXNativeTarget "App1" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,10 +28,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		C583EA682B074A960093D333 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -86,8 +84,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App7;
 			productName = App7;
 			productReference = C583EA6B2B074A960093D333 /* App7.app */;
@@ -109,7 +105,6 @@
 				};
 			};
 			buildConfigurationList = C583EA662B074A960093D333 /* Build configuration list for PBXProject "App7" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -117,6 +112,7 @@
 				Base,
 			);
 			mainGroup = C583EA622B074A960093D333;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = C583EA6C2B074A960093D333 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,31 +125,27 @@
 /* Begin PBXResourcesBuildPhase section */
 		C583EA692B074A960093D333 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				C583EA762B074A970093D333 /* Preview Assets.xcassets in Resources */,
 				C583EA732B074A970093D333 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C583EA672B074A960093D333 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				C583EA712B074A960093D333 /* ContentView.swift in Sources */,
 				C583EA7F2B074B290093D333 /* HomeView.swift in Sources */,
 				C583EA6F2B074A960093D333 /* App7App.swift in Sources */,
 				C583EA7D2B074B130093D333 /* ContentViewModel.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		C583EA772B074A970093D333 /* Debug */ = {
+		C583EA772B074A970093D333 /* Debug configuration for PBXProject "App7" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		C583EA782B074A970093D333 /* Release */ = {
+		C583EA782B074A970093D333 /* Release configuration for PBXProject "App7" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -276,7 +268,7 @@
 			};
 			name = Release;
 		};
-		C583EA7A2B074A970093D333 /* Debug */ = {
+		C583EA7A2B074A970093D333 /* Debug configuration for PBXNativeTarget "App7" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -303,7 +295,7 @@
 			};
 			name = Debug;
 		};
-		C583EA7B2B074A970093D333 /* Release */ = {
+		C583EA7B2B074A970093D333 /* Release configuration for PBXNativeTarget "App7" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -336,19 +328,17 @@
 		C583EA662B074A960093D333 /* Build configuration list for PBXProject "App7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C583EA772B074A970093D333 /* Debug */,
-				C583EA782B074A970093D333 /* Release */,
+				C583EA772B074A970093D333 /* Debug configuration for PBXProject "App7" */,
+				C583EA782B074A970093D333 /* Release configuration for PBXProject "App7" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		C583EA792B074A970093D333 /* Build configuration list for PBXNativeTarget "App7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C583EA7A2B074A970093D333 /* Debug */,
-				C583EA7B2B074A970093D333 /* Release */,
+				C583EA7A2B074A970093D333 /* Debug configuration for PBXNativeTarget "App7" */,
+				C583EA7B2B074A970093D333 /* Release configuration for PBXNativeTarget "App7" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

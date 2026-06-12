@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,10 +33,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BCE31681265BAC0C007B661B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -86,8 +84,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App2;
 			productName = App2;
 			productReference = BCE31684265BAC0C007B661B /* App2.app */;
@@ -101,7 +97,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					BCE31683265BAC0C007B661B = {
 						CreatedOnToolsVersion = 12.5;
@@ -109,7 +105,6 @@
 				};
 			};
 			buildConfigurationList = BCE3167F265BAC0C007B661B /* Build configuration list for PBXProject "App2" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -117,6 +112,7 @@
 				Base,
 			);
 			mainGroup = BCE3167B265BAC0C007B661B;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = BCE31685265BAC0C007B661B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -129,20 +125,17 @@
 /* Begin PBXResourcesBuildPhase section */
 		BCE31682265BAC0C007B661B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCE31694265BAC0D007B661B /* LaunchScreen.storyboard in Resources */,
 				BCE31691265BAC0D007B661B /* Assets.xcassets in Resources */,
 				BCE3168F265BAC0C007B661B /* Main.storyboard in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCE31680265BAC0C007B661B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCE3168C265BAC0C007B661B /* HomeViewController.swift in Sources */,
 				BCE3169C265BB03F007B661B /* DetailView.swift in Sources */,
@@ -150,7 +143,6 @@
 				BCE3169E265BB1A0007B661B /* DetailSheetView.swift in Sources */,
 				BCE3168A265BAC0C007B661B /* SceneDelegate.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -174,10 +166,11 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BCE31696265BAC0D007B661B /* Debug */ = {
+		BCE31696265BAC0D007B661B /* Debug configuration for PBXProject "App2" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -238,10 +231,11 @@
 			};
 			name = Debug;
 		};
-		BCE31697265BAC0D007B661B /* Release */ = {
+		BCE31697265BAC0D007B661B /* Release configuration for PBXProject "App2" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -296,7 +290,7 @@
 			};
 			name = Release;
 		};
-		BCE31699265BAC0D007B661B /* Debug */ = {
+		BCE31699265BAC0D007B661B /* Debug configuration for PBXNativeTarget "App2" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -313,7 +307,7 @@
 			};
 			name = Debug;
 		};
-		BCE3169A265BAC0D007B661B /* Release */ = {
+		BCE3169A265BAC0D007B661B /* Release configuration for PBXNativeTarget "App2" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -336,19 +330,17 @@
 		BCE3167F265BAC0C007B661B /* Build configuration list for PBXProject "App2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCE31696265BAC0D007B661B /* Debug */,
-				BCE31697265BAC0D007B661B /* Release */,
+				BCE31696265BAC0D007B661B /* Debug configuration for PBXProject "App2" */,
+				BCE31697265BAC0D007B661B /* Release configuration for PBXProject "App2" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BCE31698265BAC0D007B661B /* Build configuration list for PBXNativeTarget "App2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCE31699265BAC0D007B661B /* Debug */,
-				BCE3169A265BAC0D007B661B /* Release */,
+				BCE31699265BAC0D007B661B /* Debug configuration for PBXNativeTarget "App2" */,
+				BCE3169A265BAC0D007B661B /* Release configuration for PBXNativeTarget "App2" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,10 +31,8 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BC28B3BF26E21355001420E3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -91,8 +89,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App3;
 			productName = App3;
 			productReference = BC28B3C226E21355001420E3 /* App3.app */;
@@ -114,7 +110,6 @@
 				};
 			};
 			buildConfigurationList = BC28B3BD26E21355001420E3 /* Build configuration list for PBXProject "App3" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -122,6 +117,7 @@
 				Base,
 			);
 			mainGroup = BC28B3B926E21355001420E3;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = BC28B3C326E21355001420E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,19 +130,16 @@
 /* Begin PBXResourcesBuildPhase section */
 		BC28B3C026E21355001420E3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BC28B3CD26E21359001420E3 /* Preview Assets.xcassets in Resources */,
 				BC28B3CA26E21359001420E3 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC28B3BE26E21355001420E3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BC28B3D826E2439F001420E3 /* MyNumber.swift in Sources */,
 				BC28B3C826E21355001420E3 /* ContentView.swift in Sources */,
@@ -154,12 +147,11 @@
 				BCDA7D5C26F4F1DC0025EDD8 /* ListExample.swift in Sources */,
 				BC28B3D626E2438E001420E3 /* MyNumberView.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		BC28B3CF26E21359001420E3 /* Debug */ = {
+		BC28B3CF26E21359001420E3 /* Debug configuration for PBXProject "App3" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +216,7 @@
 			};
 			name = Debug;
 		};
-		BC28B3D026E21359001420E3 /* Release */ = {
+		BC28B3D026E21359001420E3 /* Release configuration for PBXProject "App3" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -283,7 +275,7 @@
 			};
 			name = Release;
 		};
-		BC28B3D226E21359001420E3 /* Debug */ = {
+		BC28B3D226E21359001420E3 /* Debug configuration for PBXNativeTarget "App3" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -302,7 +294,7 @@
 			};
 			name = Debug;
 		};
-		BC28B3D326E21359001420E3 /* Release */ = {
+		BC28B3D326E21359001420E3 /* Release configuration for PBXNativeTarget "App3" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -327,19 +319,17 @@
 		BC28B3BD26E21355001420E3 /* Build configuration list for PBXProject "App3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC28B3CF26E21359001420E3 /* Debug */,
-				BC28B3D026E21359001420E3 /* Release */,
+				BC28B3CF26E21359001420E3 /* Debug configuration for PBXProject "App3" */,
+				BC28B3D026E21359001420E3 /* Release configuration for PBXProject "App3" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BC28B3D126E21359001420E3 /* Build configuration list for PBXNativeTarget "App3" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC28B3D226E21359001420E3 /* Debug */,
-				BC28B3D326E21359001420E3 /* Release */,
+				BC28B3D226E21359001420E3 /* Debug configuration for PBXNativeTarget "App3" */,
+				BC28B3D326E21359001420E3 /* Release configuration for PBXNativeTarget "App3" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

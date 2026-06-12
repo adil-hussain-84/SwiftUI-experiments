@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,17 +39,13 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BCEA3EA1279ABFF20088B609 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCEA3EB6279AC1520088B609 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -113,8 +109,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App5;
 			productName = App5;
 			productReference = BCEA3EA4279ABFF20088B609 /* App5.app */;
@@ -146,7 +140,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					BCEA3EA3279ABFF20088B609 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -158,7 +152,6 @@
 				};
 			};
 			buildConfigurationList = BCEA3E9F279ABFF20088B609 /* Build configuration list for PBXProject "App5" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -166,6 +159,7 @@
 				Base,
 			);
 			mainGroup = BCEA3E9B279ABFF20088B609;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = BCEA3EA5279ABFF20088B609 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,40 +173,32 @@
 /* Begin PBXResourcesBuildPhase section */
 		BCEA3EA2279ABFF20088B609 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCEA3EAF279ABFF60088B609 /* Preview Assets.xcassets in Resources */,
 				BCEA3EAC279ABFF60088B609 /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCEA3EB7279AC1520088B609 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BCEA3EA0279ABFF20088B609 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCEA3EAA279ABFF20088B609 /* ContentView.swift in Sources */,
 				BCEA3EA8279ABFF20088B609 /* App5App.swift in Sources */,
 				BC862436279B15D700CC108E /* CurrentDateProvider.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCEA3EB5279AC1520088B609 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCEA3EBC279AC1520088B609 /* App5UITests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -225,10 +211,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BCEA3EB0279ABFF60088B609 /* Debug */ = {
+		BCEA3EB0279ABFF60088B609 /* Debug configuration for PBXProject "App5" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -289,10 +276,11 @@
 			};
 			name = Debug;
 		};
-		BCEA3EB1279ABFF60088B609 /* Release */ = {
+		BCEA3EB1279ABFF60088B609 /* Release configuration for PBXProject "App5" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -347,7 +335,7 @@
 			};
 			name = Release;
 		};
-		BCEA3EB3279ABFF60088B609 /* Debug */ = {
+		BCEA3EB3279ABFF60088B609 /* Debug configuration for PBXNativeTarget "App5" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -374,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		BCEA3EB4279ABFF60088B609 /* Release */ = {
+		BCEA3EB4279ABFF60088B609 /* Release configuration for PBXNativeTarget "App5" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -401,7 +389,7 @@
 			};
 			name = Release;
 		};
-		BCEA3EC2279AC1520088B609 /* Debug */ = {
+		BCEA3EC2279AC1520088B609 /* Debug configuration for PBXNativeTarget "App5UITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -416,7 +404,7 @@
 			};
 			name = Debug;
 		};
-		BCEA3EC3279AC1520088B609 /* Release */ = {
+		BCEA3EC3279AC1520088B609 /* Release configuration for PBXNativeTarget "App5UITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -437,28 +425,25 @@
 		BCEA3E9F279ABFF20088B609 /* Build configuration list for PBXProject "App5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCEA3EB0279ABFF60088B609 /* Debug */,
-				BCEA3EB1279ABFF60088B609 /* Release */,
+				BCEA3EB0279ABFF60088B609 /* Debug configuration for PBXProject "App5" */,
+				BCEA3EB1279ABFF60088B609 /* Release configuration for PBXProject "App5" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BCEA3EB2279ABFF60088B609 /* Build configuration list for PBXNativeTarget "App5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCEA3EB3279ABFF60088B609 /* Debug */,
-				BCEA3EB4279ABFF60088B609 /* Release */,
+				BCEA3EB3279ABFF60088B609 /* Debug configuration for PBXNativeTarget "App5" */,
+				BCEA3EB4279ABFF60088B609 /* Release configuration for PBXNativeTarget "App5" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BCEA3EC1279AC1520088B609 /* Build configuration list for PBXNativeTarget "App5UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCEA3EC2279AC1520088B609 /* Debug */,
-				BCEA3EC3279AC1520088B609 /* Release */,
+				BCEA3EC2279AC1520088B609 /* Debug configuration for PBXNativeTarget "App5UITests" */,
+				BCEA3EC3279AC1520088B609 /* Release configuration for PBXNativeTarget "App5UITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */

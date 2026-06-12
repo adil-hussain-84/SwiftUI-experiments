@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 100;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,17 +39,13 @@
 /* Begin PBXFrameworksBuildPhase section */
 		BC18C2BD2915828A00BA263E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCFCFCAD29312F47000F974D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -113,8 +109,6 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			name = App4;
 			productName = App4;
 			productReference = BC18C2C02915828A00BA263E /* App4.app */;
@@ -146,7 +140,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2650;
 				TargetAttributes = {
 					BC18C2BF2915828A00BA263E = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -158,7 +152,6 @@
 				};
 			};
 			buildConfigurationList = BC18C2BB2915828A00BA263E /* Build configuration list for PBXProject "App4" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -166,6 +159,7 @@
 				Base,
 			);
 			mainGroup = BC18C2B72915828A00BA263E;
+			preferredProjectObjectVersion = 100;
 			productRefGroup = BC18C2C12915828A00BA263E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,40 +173,32 @@
 /* Begin PBXResourcesBuildPhase section */
 		BC18C2BE2915828A00BA263E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BC18C2CB2915828C00BA263E /* Preview Assets.xcassets in Resources */,
 				BC18C2C82915828C00BA263E /* Assets.xcassets in Resources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCFCFCAE29312F47000F974D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BC18C2BC2915828A00BA263E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BC18C2D2291588FE00BA263E /* RatingView.swift in Sources */,
 				BC18C2C62915828A00BA263E /* ContentView.swift in Sources */,
 				BC18C2C42915828A00BA263E /* App4App.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BCFCFCAC29312F47000F974D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 				BCFCFCB329312F47000F974D /* App4UITests.swift in Sources */,
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -225,10 +211,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		BC18C2CC2915828C00BA263E /* Debug */ = {
+		BC18C2CC2915828C00BA263E /* Debug configuration for PBXProject "App4" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -288,10 +275,11 @@
 			};
 			name = Debug;
 		};
-		BC18C2CD2915828C00BA263E /* Release */ = {
+		BC18C2CD2915828C00BA263E /* Release configuration for PBXProject "App4" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -345,7 +333,7 @@
 			};
 			name = Release;
 		};
-		BC18C2CF2915828C00BA263E /* Debug */ = {
+		BC18C2CF2915828C00BA263E /* Debug configuration for PBXNativeTarget "App4" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -372,7 +360,7 @@
 			};
 			name = Debug;
 		};
-		BC18C2D02915828C00BA263E /* Release */ = {
+		BC18C2D02915828C00BA263E /* Release configuration for PBXNativeTarget "App4" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -399,7 +387,7 @@
 			};
 			name = Release;
 		};
-		BCFCFCB829312F47000F974D /* Debug */ = {
+		BCFCFCB829312F47000F974D /* Debug configuration for PBXNativeTarget "App4UITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -416,7 +404,7 @@
 			};
 			name = Debug;
 		};
-		BCFCFCB929312F47000F974D /* Release */ = {
+		BCFCFCB929312F47000F974D /* Release configuration for PBXNativeTarget "App4UITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -439,28 +427,25 @@
 		BC18C2BB2915828A00BA263E /* Build configuration list for PBXProject "App4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC18C2CC2915828C00BA263E /* Debug */,
-				BC18C2CD2915828C00BA263E /* Release */,
+				BC18C2CC2915828C00BA263E /* Debug configuration for PBXProject "App4" */,
+				BC18C2CD2915828C00BA263E /* Release configuration for PBXProject "App4" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BC18C2CE2915828C00BA263E /* Build configuration list for PBXNativeTarget "App4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC18C2CF2915828C00BA263E /* Debug */,
-				BC18C2D02915828C00BA263E /* Release */,
+				BC18C2CF2915828C00BA263E /* Debug configuration for PBXNativeTarget "App4" */,
+				BC18C2D02915828C00BA263E /* Release configuration for PBXNativeTarget "App4" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		BCFCFCBA29312F47000F974D /* Build configuration list for PBXNativeTarget "App4UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BCFCFCB829312F47000F974D /* Debug */,
-				BCFCFCB929312F47000F974D /* Release */,
+				BCFCFCB829312F47000F974D /* Debug configuration for PBXNativeTarget "App4UITests" */,
+				BCFCFCB929312F47000F974D /* Release configuration for PBXNativeTarget "App4UITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
