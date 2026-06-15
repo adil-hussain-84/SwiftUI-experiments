@@ -31,6 +31,8 @@ struct Page: View {
             HStack {
                 Button(action: { scrollToPreviousPage() }) {
                     Image(systemName: "chevron.left")
+                        .padding(8)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .disabled(!shouldShowPreviousPageButton)
@@ -42,14 +44,16 @@ struct Page: View {
                 Spacer()
                 Button(action: { scrollToNextPage() }) {
                     Image(systemName: "chevron.right")
+                        .padding(8)
+                        .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 .disabled(!shouldShowNextPageButton)
                 .hidden(!shouldShowNextPageButton)
             }
-            .padding(.vertical)
-            .padding(.leading, max(safeAreaInsets.leading, horizontalPadding))
-            .padding(.trailing, max(safeAreaInsets.trailing, horizontalPadding))
+            .padding(.vertical, 8)
+            .padding(.leading, max(safeAreaInsets.leading, horizontalPadding) - 8)
+            .padding(.trailing, max(safeAreaInsets.trailing, horizontalPadding) - 8)
             .background(Color(.secondarySystemBackground))
             Text(verbatim: "Some text")
                 .padding(.vertical)
