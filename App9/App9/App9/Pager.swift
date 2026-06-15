@@ -67,6 +67,12 @@ struct Pager: View {
         .ignoresSafeArea(edges: [.bottom, .horizontal])
         .scrollTargetBehavior(.paging)
         .scrollPosition($scrollPosition)
+        .onChange(of: pageWidth, initial: true) { _, newPageWidth in
+            // Snaps the current page into view on the initial load and re-snaps
+            // it on every container width change, covering screen rotations on
+            // iOS, split-screen on iPad, and live window resize on macOS.
+            scrollPosition.scrollTo(id: currentPageNumber)
+        }
         .onChange(of: scrollPosition) { _, newScrollPosition in
             guard let newPageNumber = newScrollPosition.viewID(type: Int.self) else { return }
             
@@ -86,14 +92,6 @@ struct Pager: View {
                 try? await Task.sleep(for: .seconds(0.3))
                 accessibilityFocusedPageNumber = newPageNumber
             }
-        }
-        .task(id: pageWidth) {
-            // Sleep briefly to allow the initial screen load
-            // or subsequent screen orientation change to complete
-            try? await Task.sleep(for: .seconds(0.1))
-            // Re-snap to the current page once the scroll view has a real width,
-            // and after rotations when the page width changes.
-            scrollPosition.scrollTo(id: currentPageNumber)
         }
     }
     
