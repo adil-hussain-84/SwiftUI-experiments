@@ -79,6 +79,12 @@ struct Pager: View {
             guard (currentPageNumber != newPageNumber) else { return }
             
             currentPageNumber = newPageNumber
+            
+            Task(priority: .userInitiated) {
+                // Sleep briefly to allow the scroll to complete
+                try? await Task.sleep(for: .seconds(0.1))
+                accessibilityFocusedPageNumber = newPageNumber
+            }
         }
         .onChange(of: currentPageNumber) { _, newPageNumber in
             let scrollPositionPageNumber = scrollPosition.viewID(type: Int.self)
